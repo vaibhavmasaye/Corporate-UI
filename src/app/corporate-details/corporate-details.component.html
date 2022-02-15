@@ -1,0 +1,2052 @@
+ 	<!-- Page Header
+    ============================================= -->
+    <section class="page-header page-header-text-light bg-secondary py-4" style="background: url('assets/images/bg.png') center center;">
+		<div class="container">
+		  <div class="row text-center">
+			<div class="col-2" style="text-align: left;margin-left: -1.5%">
+				<ul class="breadcrumb mb-0">
+				  <li>{{resource_name}}</li>  
+				</ul>
+			  </div>
+			<div class="col-10">
+			  <ul class="breadcrumb mb-0">
+				<li><a href="index.html">Home</a>/ </li>  
+				<li class="active">Corporate Profile</li>
+			  </ul>
+			</div>
+		  
+		  </div>
+		</div>
+	  </section><!-- Page Header end -->
+ <!-- Content
+  ============================================= -->
+ 
+  <div id="content">
+    <section class="container-fluid">
+      <div class="row mt-4">
+        <div class="col-md-12 col-lg-12">
+          <div id="verticalTab">
+            <div class="row no-gutters">
+              <div class="col-md-2 my-0 my-md-4">
+                <ul class="resp-tabs-list">
+                  <li><span><i class="fas fa-mobile-alt"></i></span> User</li>
+                  <li><span><i class="fas fa-tv"></i></span> GST Information</li>
+                  <li><span><i class="fas fa-credit-card"></i></span> New GST Details</li>
+                  <li><span><i class="fas fa-wifi"></i></span> Privileges Configuration</li>
+                  <li><span><i class="fas fa-phone"></i></span> Payment Configuration</li>
+                  <li><span><i class="fas fa-plug"></i></span> E-Mail Configuration</li>
+                  <li><span><i class="fas fa-lightbulb"></i></span> Bank Details Configuration</li>
+                  <li><span><i class="fas fa-subway"></i></span> Discount Configuration</li>
+                  <li><span><i class="fas fa-flask"></i></span> Passenger Detail Page Config</li>
+                  <li><span><i class="fas fa-tint"></i></span> Air Custom Config</li>
+				  <li><span><i class="fas fa-tint"></i></span> Paid Seat Config</li>
+				  <li><span><i class="fas fa-tint"></i></span> Air Configuration</li>
+				  <li><span><i class="fas fa-tint"></i></span> User Resources</li>
+				  <li><span><i class="fas fa-tint"></i></span> Reporting Configuration</li>
+				  <li><span><i class="fas fa-tint"></i></span> Travel Policy Configuration</li>
+				  <li><span><i class="fas fa-tint"></i></span> RM Configuration</li>
+                </ul>
+              </div>
+              <div class="col-md-10">
+                <div class="resp-tabs-container bg-light shadow-md rounded h-100 p-3"> 
+                  
+                  <!-- 1st User Resources
+                  ============================================= -->
+                  <div>
+				  <h2 class="text-6 mb-2">User Resources</h2>
+					<div class="table-inner pb-2">
+						<div class="row align-items-sm-center flex-row">
+						<div class="col-12 col-md-4"> 
+							<span class="text-3 text-dark operator-name">Logo URL</span> 
+							<span class="text-1 text-muted d-block">Corporate</span> 
+						</div>
+						<div class="col-12 col-md-4"> 
+							<span class="text-3 text-dark operator-name">Name</span> 
+							<span class="text-1 text-muted d-block" *ngIf="resource_name === '' || resource_name === null || resource_name === undefined">-</span> 
+							<span class="text-1 text-muted d-block" *ngIf="resource_name !== '' || resource_name !== null || resource_name !== undefined">{{resource_name}}</span> 								
+						</div>						
+						<div class="col-12 col-md-4"> 
+							<span class="text-3 text-dark operator-name">Email</span> 
+							<span class="text-1 text-muted d-block" *ngIf="resource_email === '' || resource_email === null || resource_email === undefined">-</span> 
+							<span class="text-1 text-muted d-block" *ngIf="resource_email !== '' || resource_email !== null || resource_email !== undefined">{{resource_email}}</span> 
+						</div>
+						</div>
+					</div>
+					
+					<div class="table-inner pb-2 pt-2">
+						<div class="row align-items-sm-center flex-row">
+						
+						<div class="col-12 col-md-4"> 
+							<span class="text-3 text-dark operator-name">Invoice Template</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="input-group">
+									<input type="text" class="form-control" aria-label="Small" placeholder="P004" aria-describedby="inputGroup-sizing-sm">
+									<button type="button" class="btn btn-primary btn-sm2 ml-2">UPLOAD</button>
+								</div>
+							</span> 
+						</div>
+						
+						<div class="col-12 col-md-4"> 
+							<span class="text-3 text-dark operator-name">Invoice Template</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="input-group input-group-sm">
+									<select class="custom-select" id="title" required="">
+										<option value="">Select One</option>
+										<option>PartnerBranch</option>
+										<option>Staff</option>
+										<option>Corporate</option>
+										<option>CorporateBranch</option>
+										<option>Distributor</option>
+										<option>Employee</option>
+										<option>Agent</option>
+										<option>Customer</option>
+										<option>Supplier</option>
+									</select>				  
+									<button type="button" class="btn btn-primary btn-sm2 ml-2">UPLOAD</button>
+								</div>
+							</span> 
+						</div>
+											
+						<div class="col-12 col-md-4"> 
+							<span class="text-3 text-dark operator-name">IsProtect Insurance Amount</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="input-group">
+									<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+									<button type="button" class="btn btn-primary btn-sm2 ml-2">UPLOAD</button>
+								</div>
+							</span> 
+						</div>
+						</div>
+					</div>
+					
+                  </div>
+                  <!-- 1st end --> 
+                  
+                  <!-- 2nd GST Information
+                  ============================================= -->
+                  <div>
+					
+					<h2 class="text-6 mb-2">GST Information</h2>
+					<div *ngFor="let x of gst_details" class=" border-top">
+                    
+					<div class="table-inner pb-2">
+						<div class="row align-items-sm-center flex-row">
+						<div class="col-12 col-md-4"> 
+							<span class="text-3 text-dark operator-name">GST Number</span> 
+							<span class="text-1 text-muted d-block">{{x.gst_number}}</span> 
+						</div>
+						<div class="col-12 col-md-4"> 
+							<span class="text-3 text-dark operator-name">GST Email</span> 
+							<span class="text-1 text-muted d-block">{{x.gst_email}}</span> 
+						</div>						
+						<div class="col-12 col-md-4"> 
+							<span class="text-3 text-dark operator-name">GST Name</span> 
+							<span class="text-1 text-muted d-block">{{x.gst_holder_name}}</span> 
+						</div>
+						</div>
+					</div>
+					
+					<div class="table-inner pb-2 pt-2">
+						<div class="row align-items-sm-center flex-row">
+						
+						<div class="col-12 col-md-4"> 
+							<span class="text-3 text-dark operator-name">GST Phone No</span> 
+							<span class="text-1 text-muted d-block">
+							{{x.gst_phone_number}}
+							</span> 
+						</div>
+						
+						<div class="col-12 col-md-4"> 
+							<span class="text-3 text-dark operator-name">GST Address</span> 
+							<span class="text-1 text-muted d-block">
+								{{x.gst_address}}
+							</span> 
+						</div>
+											
+						<div class="col-12 col-md-4"> 
+							<span class="text-3 text-dark operator-name">GST State Code</span> 
+							<span class="text-1 text-muted d-block">
+								{{x.gst_state_code}}
+							</span>
+							<!-- <span class="text-1 text-muted d-block">
+								<select class="custom-select" id="title" required="">
+									<option value="">Select One</option>
+									<option>PartnerBranch</option>
+									<option>Staff</option>
+									<option>Corporate</option>
+									<option>CorporateBranch</option>
+									<option>Distributor</option>
+									<option>Employee</option>
+									<option>Agent</option>
+									<option>Customer</option>
+									<option>Supplier</option>
+								</select>
+							</span>  -->
+						</div>
+					</div>
+					</div>
+					
+					<div class="table-inner pb-2 pt-2">
+						<div class="row align-items-sm-center flex-row">
+							<div class="col-12 col-md-4"> 
+								<span class="text-1 text-muted d-block">
+									<button type="button" class="btn btn-primary" (click)="deleteGst(x.sno)">Delete</button>
+								</span> 
+							</div>
+						</div>
+					</div>
+					<div class="table-inner pb-2 pt-2" style="height: 30px;"></div>
+					</div>
+				  </div>
+                  <!-- 2nd end --> 
+                  
+                  <!-- 3rd New GST Information
+                  ============================================= -->
+				  <div>
+					<h2 class="text-6 mb-2">GST Information</h2>
+					<form [formGroup]="formVar" (ngSubmit)="addGst()">
+					  <div class="table-inner pb-2 border-top">
+						  <div class="row align-items-sm-center flex-row">
+						  <div class="col-12 col-md-4"> 
+							  <span class="text-3 text-dark operator-name">GST Number</span> 
+							  <span class="text-1 text-muted d-block">
+								  <input type="text" class="form-control" formControlName="gst_number" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></span> 
+							  
+						  </div>
+						  <div class="col-12 col-md-4"> 
+							  <span class="text-3 text-dark operator-name">GST Email</span> 
+							  <span class="text-1 text-muted d-block">
+								  <input type="text" class="form-control" formControlName="gst_email" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></span> 
+						  </div>					
+						  <div class="col-12 col-md-4"> 
+							  <span class="text-3 text-dark operator-name">GST Holder Name</span> 
+							  <span class="text-1 text-muted d-block">
+								  <input type="text" class="form-control" formControlName="gst_holder_name" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></span> 
+								  
+							  </div>
+							  <div class="col-12 col-md-4"> 
+								  <div *ngIf="f['gst_number'].touched && f['gst_number'].invalid" class="alert alert-danger">
+									  <div *ngIf="f['gst_number'].errors && f['gst_number'].errors['required']">GST Number is required.</div>
+								  </div>
+							  </div>
+							  <div class="col-12 col-md-4">
+								  <div *ngIf="f['gst_email'].touched && f['gst_email'].invalid" class="alert alert-danger">
+									  <div *ngIf="f['gst_email'].errors && f['gst_email'].errors['required']">GST Email is required.</div>
+									  <div *ngIf="f['gst_email'].errors && f['gst_email'].errors['email']">Please, enter valid email address.</div>
+								  </div>
+							  </div>					
+							  <div class="col-12 col-md-4">
+								  <div *ngIf="f['gst_holder_name'].touched && f['gst_holder_name'].invalid" class="alert alert-danger">
+									  <div *ngIf="f['gst_holder_name'].errors && f['gst_holder_name'].errors['required']">GST Holder Name is required.</div>
+								  </div>
+							  </div>
+						  </div>
+					  </div>
+					  <div class="table-inner pb-2">
+						  <div class="row align-items-sm-center flex-row">
+						  <div class="col-12 col-md-4"> 
+							  <span class="text-3 text-dark operator-name">GST Phone Number</span> 
+							  <span class="text-1 text-muted d-block">
+								  <input type="number" class="form-control" formControlName="gst_phone_number" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></span> 
+								  
+							  </div>
+						  <div class="col-12 col-md-4"> 
+							  <span class="text-3 text-dark operator-name">GST Address</span> 
+							  <span class="text-1 text-muted d-block">
+								  <input type="text" class="form-control" formControlName="gst_address" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></span> 
+								  
+							  </div>					
+						  <div class="col-12 col-md-4"> 
+							  <span class="text-3 text-dark operator-name">GST State Code</span> 
+							  <span class="text-1 text-muted d-block">
+								  <div class="input-group input-group-sm">
+									  <select class="custom-select" id="title" required formControlName="gst_state_code">
+										  <option value="">Select State</option>
+										  <option *ngFor="let x of states" [value]="x.state_code">{{x.state_name}}</option>									
+									  </select>
+								  </div>
+							  </span> 
+						  </div>
+						  <div class="col-12 col-md-4"> 
+							  <div *ngIf="f['gst_phone_number'].touched && f['gst_phone_number'].invalid" class="alert alert-danger">
+									  <div *ngIf="f['gst_phone_number'].errors && f['gst_phone_number'].errors['required']">Phone Number is required.</div> 			  
+									  <div *ngIf="f['gst_phone_number'].errors && f['gst_phone_number'].errors['minlength']">Phone Number should be 10 character.</div>
+									  <div *ngIf="f['gst_phone_number'].errors && f['gst_phone_number'].errors['maxlength']">Phone Number should only be 10 character.</div>
+								  </div>
+							  </div>
+						  <div class="col-12 col-md-4"> 
+							  <div *ngIf="f['gst_address'].touched && f['gst_address'].invalid" class="alert alert-danger">
+									  <div *ngIf="f['gst_address'].errors && f['gst_address'].errors['required']">GST Address is required.</div>
+								  </div>
+							  </div>					
+						  <div class="col-12 col-md-4"> 
+							  <div *ngIf="f['gst_state_code'].touched && f['gst_state_code'].invalid" class="alert alert-danger">
+								  <div *ngIf="f['gst_state_code'].errors && f['gst_state_code'].errors['required']">GST State Code is required.</div>
+							  </div>
+						  </div>
+						</div>
+					  </div>
+					  
+					  <div class="table-inner pb-2">
+						  <div class="row align-items-sm-center flex-row">
+							  <div class="col-12 col-md-4"> 
+								  <span class="text-3 text-dark operator-name">
+									  <button class="btn btn-primary"  type="submit">Update</button>
+								  </span> 
+							  </div>
+						  </div>
+					  </div>
+					</form>
+					</div>
+                  <!-- 3ed end --> 
+                  
+                  <!-- 4th Privileges Configuration
+                  ============================================= -->
+                  <div>
+				  <h2 class="text-6 mb-2">Privileges Configuration</h2>
+                    <div class="table-inner pb-2">
+						<div class="row align-items-sm-center flex-row">
+						<div class="col-12 col-md-12"> 
+							<span class="text-3 text-dark operator-name">Plan Name</span> 
+							<span class="text-1 text-muted d-block">
+								<select class="custom-select" id="title" required="">
+									<option value="">Select One</option>
+									<option>PartnerBranch</option>
+									<option>Staff</option>
+									<option>Corporate</option>
+									<option>CorporateBranch</option>
+									<option>Distributor</option>
+									<option>Employee</option>
+									<option>Agent</option>
+									<option>Customer</option>
+									<option>Supplier</option>
+								</select>
+							</span> 
+						</div>
+						</div>
+					</div>
+					<div class="table-inner pb-2">
+						<div class="row align-items-sm-center flex-row">
+							<div class="col-12 col-md-4"> 
+								<span class="text-3 text-dark operator-name">
+									<button type="button" class="btn btn-primary">Change Plan</button>
+								</span> 
+							</div>
+						</div>
+					</div>
+				  </div>
+                  <!-- 4th end --> 
+                  
+                  <!-- 5th Payment Configuration
+                  ============================================= -->
+                  <div>
+                    <h2 class="text-6 mb-2">Payment Configuration</h2>
+                    <div class="table-inner pb-2">
+						<div class="row align-items-sm-center flex-row">
+						<div class="col-12 col-md-4"> 
+							<span class="text-3 text-dark operator-name">Allow Payment Media</span> 
+							<span class="text-1 text-muted d-block">Official</span> 
+						</div>
+						<div class="col-12 col-md-4"> 
+							<span class="text-3 text-dark operator-name">Deposit Account</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="input-group input-group-sm">
+									<select class="custom-select" id="title" required>
+									<option value="">Disabled</option>
+									<option>Enable</option>
+									</select>
+								</div>
+							</span> 
+						</div>					
+						<div class="col-12 col-md-4"> 
+							<span class="text-3 text-dark operator-name">Credit Account</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="input-group input-group-sm">
+									<select class="custom-select" id="title" required>
+									<option value="">Disabled</option>
+									<option>Enable</option>
+									</select>
+								</div>
+							</span> 
+						</div>
+						</div>
+					</div>
+					<div class="table-inner pb-2">
+						<div class="row align-items-sm-center flex-row">
+						<div class="col-12 col-md-4"> 
+							<span class="text-3 text-dark operator-name">CTA Card</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="input-group input-group-sm">
+									<select class="custom-select" id="title" required>
+									<option value="">Disabled</option>
+									<option>Enable</option>
+									</select>
+								</div>
+							</span> 
+						</div>
+						<div class="col-12 col-md-4"> 
+							<span class="text-3 text-dark operator-name">BTA Card</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="input-group input-group-sm">
+									<select class="custom-select" id="title" required>
+									<option value="">Disabled</option>
+									<option>Enable</option>
+									</select>
+								</div>
+							</span> 
+						</div>					
+						<div class="col-12 col-md-4"> 
+							<span class="text-3 text-dark operator-name">CCAvenue PG</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="input-group input-group-sm">
+									<select class="custom-select" id="title" required>
+									<option value="">Disabled</option>
+									<option>Enable</option>
+									</select>
+								</div>
+							</span> 
+						</div>
+					  </div>
+					</div>
+					
+					<div class="table-inner pb-2">
+						<div class="row align-items-sm-center flex-row">
+						<div class="col-12 col-md-4"> 
+							<span class="text-3 text-dark operator-name">PayU PG</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="input-group input-group-sm">
+									<select class="custom-select" id="title" required>
+									<option value="">Disabled</option>
+									<option>Enable</option>
+									</select>
+								</div>
+							</span> 
+						</div>
+						<div class="col-12 col-md-4"> 
+							<span class="text-3 text-dark operator-name">Pazorpay PG</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="input-group input-group-sm">
+									<select class="custom-select" id="title" required>
+									<option value="">Disabled</option>
+									<option>Enable</option>
+									</select>
+								</div>
+							</span> 
+						</div>					
+					</div>
+					</div>
+					
+					<div class="table-inner pb-2">
+						<div class="row align-items-sm-center flex-row">
+							<div class="col-12 col-md-4"> 
+								<span class="text-3 text-dark operator-name">
+									<button type="button" class="btn btn-primary">Upload</button>
+								</span> 
+							</div>
+						</div>
+					</div>
+					
+					<div class="table-inner pb-2">
+						<div class="row align-items-sm-center flex-row">
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">Billing Enbity</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="input-group input-group-sm">
+									<select class="custom-select" id="title" required>
+									<option value="">Disabled</option>
+									<option>Enable</option>
+									</select>
+								</div>
+							</span> 
+						</div>
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">Product Type</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="input-group input-group-sm">
+									<select class="custom-select" id="title" required>
+									<option value="">Disabled</option>
+									<option>Enable</option>
+									</select>
+								</div>
+							</span> 
+						</div>					
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">FOP</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="input-group input-group-sm">
+									<select class="custom-select" id="title" required>
+									<option value="">Disabled</option>
+									<option>Enable</option>
+									</select>
+								</div>
+							</span> 
+						</div>
+						
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">Card Type</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="input-group input-group-sm">
+									<select class="custom-select" id="title" required>
+									<option value="">Disabled</option>
+									<option>Enable</option>
+									</select>
+								</div>
+							</span> 
+						</div>
+					 </div>
+					</div>
+					
+					<div class="table-inner pb-2">
+						<div class="row align-items-sm-center flex-row">
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">Card Number</span> 
+							<span class="text-1 text-muted d-block">
+								<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+							</span> 
+						</div>
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">Card Holder Name</span> 
+							<span class="text-1 text-muted d-block">
+								<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+							</span> 
+						</div>					
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">Expiry Month</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="input-group input-group-sm">
+									<select class="custom-select" id="title" required>
+									<option value="">Disabled</option>
+									<option>Enable</option>
+									</select>
+								</div>
+							</span> 
+						</div>
+						
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">Expiry Year</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="input-group input-group-sm">
+									<select class="custom-select" id="title" required>
+									<option value="">Disabled</option>
+									<option>Enable</option>
+									</select>
+								</div>
+							</span> 
+						</div>
+					 </div>
+					</div>
+					
+					<div class="table-inner pb-2">
+						<div class="row align-items-sm-center flex-row">
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">Bank Name</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="input-group input-group-sm">
+									<select class="custom-select" id="title" required>
+									<option value="">Disabled</option>
+									<option>Enable</option>
+									</select>
+								</div>
+							</span> 
+						</div>
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">Address 1</span> 
+							<span class="text-1 text-muted d-block">
+								<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+							</span> 
+						</div>					
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">Address 2</span> 
+							<span class="text-1 text-muted d-block">
+								<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+							</span> 
+						</div>
+						
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">City</span> 
+							<span class="text-1 text-muted d-block">
+								<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+							</span> 
+						</div>
+					 </div>
+					</div>
+					
+					<div class="table-inner pb-2">
+						<div class="row align-items-sm-center flex-row">
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">State</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="input-group input-group-sm">
+									<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+								</div>
+							</span> 
+						</div>
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">Country</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="input-group input-group-sm">
+									<select class="custom-select" id="title" required>
+									<option value="">Disabled</option>
+									<option>Enable</option>
+									</select>
+								</div>
+							</span> 
+						</div>					
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">Pincode</span> 
+							<span class="text-1 text-muted d-block">
+								<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+							</span> 
+						</div>
+						
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">Display Name</span> 
+							<span class="text-1 text-muted d-block">
+								<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+							</span> 
+						</div>
+					 </div>
+					</div>
+					
+					<div class="table-inner pb-2">
+						<div class="row align-items-sm-center flex-row">
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">IsShowlast 4 Digit</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="input-group input-group-sm">
+									<div class="input-group input-group-sm">
+									<select class="custom-select" id="title" required>
+									<option value="">Disabled</option>
+									<option>Enable</option>
+									</select>
+								</div>
+								</div>
+							</span> 
+						</div>
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">Billing Cycle Day From</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="input-group input-group-sm">
+									<select class="custom-select" id="title" required>
+									<option value="">Disabled</option>
+									<option>Enable</option>
+									</select>
+								</div>
+							</span> 
+						</div>					
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">Billing Cycle Day To</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="input-group input-group-sm">
+									<select class="custom-select" id="title" required>
+									<option value="">Disabled</option>
+									<option>Enable</option>
+									</select>
+								</div>
+							</span> 
+						</div>
+						
+						<div class="col-12 col-md-3"> 
+							<span class="text-1 text-muted d-block">
+								<button type="button" class="btn btn-primary w-100 mt-3">Insert</button>
+							</span> 
+						</div>
+					 </div>
+					</div>
+                  </div>
+                  <!-- 5th end --> 
+                  
+                  <!-- 6th E-Mail Configuration
+                  ============================================= -->
+                  <div>
+                    <h2 class="text-6 mb-2">E-Mail Configuration</h2>
+					<div class="tables-responsive font-n p-3">
+						<table class="table tables-success table-striped shadow-md">
+						<thead class="tables-dark">
+						  <tr style="color: white;">
+						<th scope="col" width="30%">Mail Description</th>
+						<th scope="col">Type</th>
+						<th scope="col">Email Cc</th>
+						<th scope="col">Email Bcc</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+						<th scope="row">Login Acttivated</th>
+						<td>&nbsp;</td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						</tr>
+						<tr>
+						<th scope="row">Login Deactivated</th>
+						<td>&nbsp;</td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						</tr>
+						<tr>
+						<th scope="row">Login Disabled</th>
+						<td>&nbsp;</td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						</tr>
+						<tr>
+						<th scope="row">Login Enabled</th>
+						<td>&nbsp;</td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						</tr>
+						<tr>
+						<th scope="row">Corporate Registration</th>
+						<td>&nbsp;</td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						</tr>
+						<tr>
+						<th scope="row">User Registratio</th>
+						<td>&nbsp;</td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						</tr>
+						<tr>
+						<th scope="row">Reset Password</th>
+						<td>&nbsp;</td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						</tr>
+						<tr>
+						<th scope="row">Claim Approver</th>
+						<td>&nbsp;</td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						<td><input type="text" class="form-control" placeholder="ssangal@traversia.net" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						</tr>
+						<tr>
+						<th scope="row">Update Profile</th>
+						<td>&nbsp;</td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						</tr>
+						<tr>
+						<th scope="row">Send Payment link to user to get online payment</th>
+						<td>FLT</td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						</tr>
+						<tr>
+						<th scope="row">Payment Recieved mail</th>
+						<td>FLT</td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						</tr>
+						<tr>
+						<th scope="row">Refunded booking detail</th>
+						<td>FLT</td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						</tr>
+						<tr>
+						<th scope="row">Payment Recieved mail</th>
+						<td>FLT</td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						</tr>
+						<tr>
+						<th scope="row">Refunded booking detail</th>
+						<td>FLT</td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						</tr>
+						<tr>
+						<th scope="row">CHANGE \ ADDITIONA</th>
+						<td>FLT</td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						</tr>
+						<tr>
+						<th scope="row">Cancelled Booking Details</th>
+						<td>FLT</td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						</tr>
+						<tr>
+						<th scope="row">Failed booking travel details</th>
+						<td>FLT</td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						</tr>
+						<tr>
+						<th scope="row">Partially booked travel details</th>
+						<td>FLT</td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						</tr>
+						<tr>
+						<th scope="row">SuccessFully booked travel details</th>
+						<td>FLT</td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						</tr>
+						<tr>
+						<th scope="row">Air Approver</th>
+						<td>FLT</td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						</tr>
+						<tr>
+						<th scope="row">Send Flight Option</th>
+						<td>FLT</td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						</tr>
+						<tr>
+						<th scope="row">Forget Password</th>
+						<td>FLT</td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						</tr>
+						<tr>
+						<th scope="row">Hotel Approver</th>
+						<td>HTL</td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						</tr>
+						<tr>
+						<th scope="row">Hotel Failed Booking Travel Details</th>
+						<td>HTL</td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						</tr>
+						<tr>
+						<th scope="row">SuccessFully Booked Hotel</th>
+						<td>HTL</td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						</tr>
+						<tr>
+						<th scope="row">Send Hotel Option</th>
+						<td>HTL</td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						<td><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></td>
+						</tr>
+						<tr>
+						<th colspan="2" scope="row">&nbsp;</th>
+						<td colspan="2"><button type="button" class="btn btn-primary">Update</button></td>
+						</tr>
+						</tbody>
+					</table>
+					</div>
+                  </div>
+                  <!-- 6th end --> 
+                  
+                  <!-- 7th Bank Details Configuration
+                  ============================================= -->
+                  <div>
+				  <h2 class="text-6 mb-2">Bank Details Configuration</h2>
+				  <form [formGroup]="formBank" (ngSubmit)="addBank()">
+                    <div class="table-inner pb-2  border-top">
+						<div class="row align-items-sm-center flex-row">
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">Bank Name</span> 
+							<!-- <span class="text-1 text-muted d-block">
+								<input type="text" class="form-control" formControlName="bank_name" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+							</span>  -->
+							<span class="text-1 text-muted d-block">
+								<div class="input-group input-group-sm">
+									<select class="custom-select" id="bank_name" required formControlName="bank_name" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+										<option value="">Select Bank</option>
+										<option *ngFor="let x of banks" value="{{x.bank_name}}">{{x.bank_name}}</option>									
+									</select>
+								</div>
+							</span> 
+						</div>
+						
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">Bank Branch</span> 
+							<span class="text-1 text-muted d-block">
+								<input type="text" class="form-control" formControlName="bank_branch" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+							</span> 
+						</div>
+						
+						<div class="col-12 col-md-2"> 
+							<span class="text-3 text-dark operator-name">Account No</span> 
+							<span class="text-1 text-muted d-block">
+								<input type="text" class="form-control" formControlName="account_no" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+							</span> 
+						</div>
+						
+						<div class="col-12 col-md-2"> 
+							<span class="text-3 text-dark operator-name">IFSC Code</span> 
+							<span class="text-1 text-muted d-block">
+								<input type="text" class="form-control" formControlName="ifsc_code" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+							</span> 
+						</div>
+						
+						<div class="col-12 col-md-2"> 
+							<span class="text-3 text-dark operator-name">SWIFT Code</span> 
+							<span class="text-1 text-muted d-block">
+								<input type="text" class="form-control" formControlName="swift_code" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+							</span> 
+						</div>
+						<div class="col-12 col-md-3"> 
+							<div *ngIf="fr['bank_name'].touched && fr['bank_name'].invalid" class="alert alert-danger">
+								<div *ngIf="fr['bank_name'].errors && fr['bank_name'].errors['required']">This field is required.</div>
+							</div>
+						</div>
+						
+						<div class="col-12 col-md-3">
+							<div *ngIf="fr['bank_branch'].touched && fr['bank_branch'].invalid" class="alert alert-danger">
+								<div *ngIf="fr['bank_branch'].errors && fr['bank_branch'].errors['required']">This field is required.</div>
+							</div>
+						</div>
+						
+						<div class="col-12 col-md-2"> 
+							<div *ngIf="fr['account_no'].touched && fr['account_no'].invalid" class="alert alert-danger">
+								<div *ngIf="fr['account_no'].errors && fr['account_no'].errors['required']">This field is required.</div>
+							</div>
+						</div>
+						
+						<div class="col-12 col-md-2"> 
+							<div *ngIf="fr['ifsc_code'].touched && fr['ifsc_code'].invalid" class="alert alert-danger">
+								<div *ngIf="fr['ifsc_code'].errors && fr['ifsc_code'].errors['required']">This field is required.</div>
+							</div>
+						</div>
+						
+						<div class="col-12 col-md-2"> 
+							<div *ngIf="fr['swift_code'].touched && fr['swift_code'].invalid" class="alert alert-danger">
+								<div *ngIf="fr['swift_code'].errors && fr['swift_code'].errors['required']">This field is required.</div>
+							</div>
+						</div>
+						
+						</div>
+					</div>
+					<div class="table-inner pb-2">
+						<div class="row align-items-sm-center flex-row">
+							<div class="col-12 col-md-4"> 
+								<span class="text-3 text-dark operator-name">
+									<button type="submit" class="btn btn-primary">UPLOAD</button>
+								</span> 
+							</div>
+						</div>
+					</div>
+				  </form>
+
+				  <h2 class="text-6 mb-2" style="margin-top: 2em;">Bank Information</h2>
+				  <div class="bg-light rounded p-4">
+					<div class="table-responsive">
+						<div class="manage-header" style="text-align: center;">
+							<ul style="font-weight: 600;">
+								<li>ID</li>
+								<li>Account Number</li>
+								<li>Bank Name</li>
+								<li>Bank Branch</li>
+								<li>IFSC Code</li>
+								<li>SWIFT Code</li>
+							</ul>
+						</div>
+						<div *ngFor="let x of banksByBranch;let i=index;">
+							<div class="manage" style="text-align: center;">
+									<ul>
+										<li>{{i+1}}</li>
+										<li>{{x.account_no}}</li>										
+										<li>{{x.bank_name}}</li>
+										<li>{{x.bank_branch}}</li>
+										<li>{{x.ifsc_code}}</li>
+										<li>{{x.swift_code}}</li>
+										
+									</ul>
+							</div>
+							</div>
+					</div>
+				</div>
+
+				  </div>
+                  <!-- 7th end --> 
+                  
+                  <!-- 8th Discount Configuration
+                  ============================================= -->
+                  <div>
+                    <h2 class="text-6 mb-2">Discount Configuration</h2>
+					<div class="tables-responsive font-n">
+					<table class="table tables-success table-striped shadow-md">
+					<thead class="tables-dark">
+						<tr style="color: white;">
+						<th scope="col">Travel Type</th>
+						<th scope="col">Product Type</th>
+						<th scope="col">Show Discount</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+						<th scope="row">Domestic</th>
+						<td>FLT</td>
+						<td>
+							<div class="input-group input-group-sm">
+								<select class="custom-select" id="title" required="">
+									<option value="">Disabled</option>
+									<option>PartnerBranch</option>
+									<option>Staff</option>
+								</select>
+							</div>
+						</td>
+						</tr>
+						
+						<tr>
+						<th scope="row">International</th>
+						<td>FLT</td>
+						<td>
+							<div class="input-group input-group-sm">
+									<select class="custom-select" id="title" required="">
+										<option value="">Disabled</option>
+										<option>PartnerBranch</option>
+										<option>Staff</option>
+									</select>
+							</div>
+						</td>
+						</tr>
+						
+						<tr>
+						<th colspan="3" scope="row"><button type="button" class="btn btn-primary">Update</button></th>
+						</tr>
+					</tbody>
+					</table>
+					</div>
+                  </div>
+                  <!-- 8th end --> 
+                  
+                  <!-- 9th Passenger Detail Page Config
+                  ============================================= -->
+                  <div>
+				  <h2 class="text-6 mb-2">Passenger Detail Page Config</h2>
+                    <div class="table-inner pb-2">
+						<div class="row align-items-sm-center flex-row">
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">Cost Center</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="form-check radio-btn">								
+										<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+										<label class="form-check-label" for="exampleRadios1">Hide</label>								
+								</div>
+								<div class="form-check radio-btn">
+									<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+									<label class="form-check-label" for="exampleRadios1">Show</label>
+								</div>
+							</span> 
+						</div>
+						
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">Project Code</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="form-check radio-btn">								
+										<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+										<label class="form-check-label" for="exampleRadios1">Hide</label>								
+								</div>
+								<div class="form-check radio-btn">
+									<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+									<label class="form-check-label" for="exampleRadios1">Show</label>
+								</div>
+							</span> 
+						</div>
+						
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">Department</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="form-check radio-btn">								
+										<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+										<label class="form-check-label" for="exampleRadios1">Hide</label>								
+								</div>
+								<div class="form-check radio-btn">
+									<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+									<label class="form-check-label" for="exampleRadios1">Show</label>
+								</div>
+							</span> 
+						</div>
+						
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">Location</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="form-check radio-btn">								
+										<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+										<label class="form-check-label" for="exampleRadios1">Hide</label>								
+								</div>
+								<div class="form-check radio-btn">
+									<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+									<label class="form-check-label" for="exampleRadios1">Show</label>
+								</div>
+							</span> 
+						</div>
+						</div>
+					</div>
+					
+					<div class="table-inner pb-2">
+						<div class="row align-items-sm-center flex-row">
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">Employee ID</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="form-check radio-btn">								
+										<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+										<label class="form-check-label" for="exampleRadios1">Hide</label>								
+								</div>
+								<div class="form-check radio-btn">
+									<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+									<label class="form-check-label" for="exampleRadios1">Show</label>
+								</div>
+							</span> 
+						</div>
+						
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">Booking By</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="form-check radio-btn">								
+										<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+										<label class="form-check-label" for="exampleRadios1">Hide</label>								
+								</div>
+								<div class="form-check radio-btn">
+									<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+									<label class="form-check-label" for="exampleRadios1">Show</label>
+								</div>
+							</span> 
+						</div>
+						
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">TRF</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="form-check radio-btn">								
+										<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+										<label class="form-check-label" for="exampleRadios1">Hide</label>								
+								</div>
+								<div class="form-check radio-btn">
+									<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+									<label class="form-check-label" for="exampleRadios1">Show</label>
+								</div>
+							</span> 
+						</div>
+						
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">Pax Contact</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="form-check radio-btn">								
+										<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+										<label class="form-check-label" for="exampleRadios1">Hide</label>								
+								</div>
+								<div class="form-check radio-btn">
+									<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+									<label class="form-check-label" for="exampleRadios1">Show</label>
+								</div>
+							</span> 
+						</div>
+						</div>
+					</div>
+					
+					<div class="table-inner pb-2">
+						<div class="row align-items-sm-center flex-row">
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">Hide GST</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="form-check radio-btn">								
+										<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+										<label class="form-check-label" for="exampleRadios1">Hide</label>								
+								</div>
+								<div class="form-check radio-btn">
+									<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+									<label class="form-check-label" for="exampleRadios1">Show</label>
+								</div>
+								<div class="form-check radio-btn">
+									<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+									<label class="form-check-label" for="exampleRadios1">Optional</label>
+								</div>
+								<div class="form-check radio-btn">
+									<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+									<label class="form-check-label" for="exampleRadios1">Freez</label>
+								</div>
+							</span> 
+						</div>
+						
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">Contact Address</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="form-check radio-btn">								
+										<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+										<label class="form-check-label" for="exampleRadios1">Hide</label>								
+								</div>
+								<div class="form-check radio-btn">
+									<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+									<label class="form-check-label" for="exampleRadios1">Show</label>
+								</div>
+							</span> 
+						</div>
+						
+						</div>
+					</div>
+					
+					
+					
+					
+					
+					
+					<div class="table-inner pb-2">
+						<div class="row align-items-sm-center flex-row">
+							<div class="col-12 col-md-4"> 
+								<span class="text-3 text-dark operator-name">
+									<button type="button" class="btn btn-primary">UPLOAD</button>
+								</span> 
+							</div>
+						</div>
+					</div>
+				  </div>
+                  <!-- 9th end --> 
+                  
+                  <!-- 10th Air Custom Config
+                  ============================================= -->
+                  <div>
+				  <h2 class="text-6 mb-2">Air Custom Config</h2>
+                    <div class="table-inner pb-2">
+						<div class="row align-items-sm-center flex-row">
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">Exclude Airline</span> 
+							<span class="text-1 text-muted d-block">
+								<input type="text" class="form-control" placeholder="Comma Seperated Airline Code" aria-label="Small" aria-describedby="inputGroup-sizing-sm">	
+							</span> 
+						</div>
+						
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">Show Deposite</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="form-check radio-btn">								
+										<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+										<label class="form-check-label" for="exampleRadios1">Hide</label>								
+								</div>
+								<div class="form-check radio-btn">
+									<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+									<label class="form-check-label" for="exampleRadios1">Show</label>
+								</div>
+							</span> 
+						</div>
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">Fare Rule</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="form-check radio-btn">								
+										<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+										<label class="form-check-label" for="exampleRadios1">Hide</label>								
+								</div>
+								<div class="form-check radio-btn">
+									<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+									<label class="form-check-label" for="exampleRadios1">Show</label>
+								</div>
+							</span> 
+						</div>
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">Fare Rule Airlines</span> 
+							<span class="text-1 text-muted d-block">
+								<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+							</span> 
+						</div>
+						</div>
+					</div>
+					
+					<div class="table-inner pb-2">
+						<div class="row align-items-sm-center flex-row">
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">Ticket Fare</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="form-check radio-btn">								
+										<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+										<label class="form-check-label" for="exampleRadios1">Hide</label>								
+								</div>
+								<div class="form-check radio-btn">
+									<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+									<label class="form-check-label" for="exampleRadios1">Show</label>
+								</div>
+							</span> 
+						</div>
+						
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name"> Fare Type </span> 
+							<span class="text-1 text-muted d-block">
+								<div class="form-check radio-btn">								
+										<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+										<label class="form-check-label" for="exampleRadios1">Hide</label>								
+								</div>
+								<div class="form-check radio-btn">
+									<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+									<label class="form-check-label" for="exampleRadios1">Show</label>
+								</div>
+							</span> 
+						</div>
+						
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">Promot Code</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="form-check radio-btn">								
+										<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+										<label class="form-check-label" for="exampleRadios1">Hide</label>								
+								</div>
+								<div class="form-check radio-btn">
+									<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+									<label class="form-check-label" for="exampleRadios1">Show</label>
+								</div>
+							</span> 
+						</div>
+						
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">Service Class </span> 
+							<span class="text-1 text-muted d-block">
+								<div class="form-check radio-btn">								
+										<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+										<label class="form-check-label" for="exampleRadios1">Hide</label>								
+								</div>
+								<div class="form-check radio-btn">
+									<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+									<label class="form-check-label" for="exampleRadios1">Show</label>
+								</div>
+							</span> 
+						</div>
+						</div>
+					</div>
+					
+					
+					<div class="table-inner pb-2">
+						<div class="row align-items-sm-center flex-row">
+							<div class="col-12 col-md-4"> 
+								<span class="text-3 text-dark operator-name">
+									<button type="button" class="btn btn-primary">Update</button>
+								</span> 
+							</div>
+						</div>
+					</div>
+				  </div>
+                  <!-- 10th end --> 
+				  
+				  <!-- 11th Paid Seat Config
+                  ============================================= -->
+                  <div>
+				  <h2 class="text-6 mb-2">Paid Seat Config</h2>
+                    <div class="table-inner pb-2">
+						<div class="row align-items-sm-center flex-row">
+							<div class="col-12 col-md-12"> 
+								<span class="text-3 text-dark operator-name">Paid Seat</span> 
+								<span class="text-1 text-muted d-block">
+									<div class="form-check radio-btn">								
+											<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+											<label class="form-check-label" for="exampleRadios1">Hide</label>								
+									</div>
+									<div class="form-check radio-btn">
+										<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+										<label class="form-check-label" for="exampleRadios1">Show</label>
+									</div>
+								</span> 
+							</div>
+						</div>
+					</div>
+					<div class="table-inner pb-2">
+						<div class="row align-items-sm-center flex-row">
+							<div class="col-12 col-md-4"> 
+								<span class="text-3 text-dark operator-name">
+									<button type="button" class="btn btn-primary">Update</button>
+								</span> 
+							</div>
+						</div>
+					</div>
+				  </div>
+                  <!-- 11th  end -->
+				  
+				  
+				  <!-- 12th Air Configuration
+                  ============================================= -->
+				<div>
+					<h2 class="text-6 mb-2">Air Configuration</h2>
+
+					<div class="w3-bar w3-black">
+					  <button class="w3-bar-item w3-button" onclick="openCity('London')">Live</button>
+					  <button class="w3-bar-item w3-button" onclick="openCity('Paris')">Test</button>
+					</div>
+
+					<div id="London" class="w3-container city border">
+						<h4 class="text-3 m-0 pt-3 pb-0 pl-3">Air Credential</h4>				 
+					<div class="tables-responsive font-n p-3">
+					<table class="table tables-success table-striped shadow-md">
+					<thead class="tables-dark">
+						<tr style="color: white;">
+						<th scope="col">Supplier Code</th>
+						<th scope="col">User ID</th>
+						<th scope="col">Password</th>
+						<th scope="col">Credential Type</th>
+						<th scope="col">Is Active</th>
+						<th scope="col">Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+						<th scope="row">1A</th>
+						<td>1ASIWDIGDIG</td>
+						<td>
+							******ucz$
+						</td>
+						<td>LIVE</td>
+						<td>Disabled</td>
+						<td>Edit</td>
+						</tr>
+						
+						<tr>
+						<th scope="row">AG</th>
+						<td>Unversal.API/uAP16363705614-26D5031C(p3474661)</td>
+						<td>******w5d/</td>
+						<td>LIVE</td>
+						<td>Disabled</td>
+						<td>Edit</td>
+						</tr>
+						<tr>
+						<th scope="row">ACH</th>
+						<td>KTDEL290</td>
+						<td>******9Ggn</td>
+						<td>LIVE</td>
+						<td>Disabled</td>
+						<td>Edit</td>
+						</tr>
+						<tr>
+						<th scope="row">ADR</th>
+						<td>TOP</td>
+						<td>******sY34</td>
+						<td>LIVE</td>
+						<td>Disabled</td>
+						<td>Edit</td>
+						</tr>
+						<tr>
+						<th scope="row">GB</th>
+						<td>DELS1173</td>
+						<td>******ruck</td>
+						<td>LIVE</td>
+						<td>Disabled</td>
+						<td>Edit</td>
+						</tr>
+						<tr>
+						<th scope="row">GBCORP</th>
+						<td>delidgts</td>
+						<td>******rain</td>
+						<td>LIVE</td>
+						<td>Disabled</td>
+						<td>Edit</td>
+						</tr>
+						<tr>
+						<th scope="row">GBSME</th>
+						<td>delse034</td>
+						<td>******ruck</td>
+						<td>LIVE</td>
+						<td>Disabled</td>
+						<td>Edit</td>
+						</tr>
+						<tr>
+						<th scope="row">SG</th>
+						<td>DELDT98106</td>
+						<td>******8sF4</td>
+						<td>LIVE</td>
+						<td>Disabled</td>
+						<td>Edit</td>
+						</tr>
+						<tr>
+						<th scope="row">SGCORP</th>
+						<td>DELDT12679</td>
+						<td>******2@19</td>
+						<td>LIVE</td>
+						<td>Disabled</td>
+						<td>Edit</td>
+						</tr>
+						<tr>
+						<th scope="row">SGSME</th>
+						<td>DELDT12679</td>
+						<td>****ejet</td>
+						<td>LIVE</td>
+						<td>Disabled</td>
+						<td>Edit</td>
+						</tr>
+						<tr>
+						<th scope="row">TBO</th>
+						<td>DELD047</td>
+						<td>******7@#@</td>
+						<td>LIVE</td>
+						<td>Disabled</td>
+						<td>Edit</td>
+						</tr>
+						
+						
+					</tbody>
+					</table>
+					</div>
+
+					<h4 class="text-3 m-0 pt-0 pb-0 pl-3">Air PromoCode</h4>
+					<div class="tables-responsive font-n p-3">
+						<table class="table tables-success table-striped shadow-md">
+						<thead class="tables-dark">
+						<tr style="color: white;">
+						<th scope="col">Supplier Code</th>
+						<th scope="col">PromoCode Live</th>
+						<th scope="col">Airline Code</th>
+						<th scope="col">Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+						<th scope="row">1A</th>
+						<td>1ASIWDIGDIG</td>
+						<td>
+							******ucz$
+						</td>
+						<td>LIVE</td>
+						</tr>
+						
+						<tr>
+						<th scope="row">AG</th>
+						<td>Unversal.API/uAP16363705614-26D5031C(p3474661)</td>
+						<td>******w5d/</td>
+						<td>LIVE</td>
+						</tr>
+						<tr>
+						<th scope="row">&nbsp;</th>
+						<td colspan="3"><button type="button" class="btn btn-primary">Add New</button></td>
+						</tr>
+						
+						
+					</tbody>
+					</table>
+					</div>
+
+
+					</div>
+
+					<div id="Paris" class="w3-container city" style="display:none">
+					  <h2>Paris</h2>
+					  <p>Paris is the capital of France.</p> 
+					</div>
+				</div>
+                  <!-- 12th  end -->
+				  
+				  <!-- 13th User Resources
+				  ============================================= -->
+				  <div>
+				  <h2 class="text-6 mb-2">User Resources</h2>
+					<div class="table-inner pb-2">
+						<div class="row align-items-sm-center flex-row">
+						<div class="col-12 col-md-6"> 
+							<span class="text-3 text-dark operator-name">Logo URL</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="input-group">
+									<input type="text" placeholder="https://www.digitravel.co.in/images/Corplogo/1007.png" class="form-control" aria-label="Small" placeholder="P004" aria-describedby="inputGroup-sizing-sm">
+								</div>
+							</span> 
+						</div>
+						<div class="col-12 col-md-6"> 
+							<span class="text-3 text-dark operator-name">Update</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="input-group">
+							  <div class="custom-file">
+								<input type="file" class="custom-file-input" id="inputGroupFile01">
+								<label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+							  </div>
+							</div>
+							</span> 
+						</div>						
+						</div>
+					</div>
+					
+					<div class="table-inner pb-2">
+						<div class="row align-items-sm-center flex-row">
+						<div class="col-12 col-md-6"> 
+							<span class="text-3 text-dark operator-name">Travel Policy URL</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="input-group">
+									<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+								</div>
+							</span> 
+						</div>
+						<div class="col-12 col-md-6"> 
+							<span class="text-3 text-dark operator-name">Update</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="input-group">
+							  <div class="custom-file">
+								<input type="file" class="custom-file-input" id="inputGroupFile01">
+								<label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+							  </div>
+							</div>
+							</span> 
+						</div>						
+						</div>
+					</div>
+					
+					<div class="table-inner pb-2">
+						<div class="row align-items-sm-center flex-row">
+						<div class="col-12 col-md-6"> 
+							<span class="text-3 text-dark operator-name">PartnerBanner URL</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="input-group">
+									<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+								</div>
+							</span> 
+						</div>
+						<div class="col-12 col-md-6"> 
+							<span class="text-3 text-dark operator-name">Update</span> 
+							<span class="text-1 text-muted d-block">
+								<div class="input-group">
+							  <div class="custom-file">
+								<input type="file" class="custom-file-input" id="inputGroupFile01">
+								<label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+							  </div>
+							</div>
+							</span> 
+						</div>						
+						</div>
+					</div>
+					
+                  </div>
+				  <!-- 13th  end -->
+				  
+                  <!-- 14th Reporting Configuration
+                  ============================================= -->
+                  <div>
+				  <h2 class="text-6 mb-2">Reporting Configuration</h2>
+				  <div class="table-inner pb-2">
+					<h4 class="text-3 mb-2">Biling Entity</h4>
+					<div class="row flex-row">
+						<div class="col-12 col-md-2"> 
+							<span class="text-3 text-dark operator-name">Display Name/Code</span> 
+							<span class="text-1 text-muted d-block">
+								[1]HNI Traveller/P004
+							</span> 
+						</div>
+						
+						<div class="col-12 col-md-4"> 
+							<span class="text-3 text-dark operator-name">GST Info</span> 
+							<span class="text-1 text-muted d-block border">
+								<div class="amenities-list">
+								<div class="single-amenity">State Code</div>
+								<div class="single-amenity">06</div>
+								</div>
+								
+								<div class="amenities-list">
+								<div class="single-amenity">Number</div>
+								<div class="single-amenity">06AAHCD1753F1ZW</div>
+								</div>
+								
+								<div class="amenities-list">
+								<div class="single-amenity">Email</div>
+								<div class="single-amenity">customer.gst@gigitravelsolutions.com</div>
+								</div>
+								
+								<div class="amenities-list">
+								<div class="single-amenity">Address</div>
+								<div class="single-amenity">B6 Sector 34 infocity 1 Gurgaon</div>
+								</div>
+								
+								<div class="amenities-list">
+								<div class="single-amenity">Phone</div>
+								<div class="single-amenity">9818277749</div>
+								</div>
+								
+								
+							</span> 
+						</div>
+						
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">SuperVisor1 Id</span> 
+							<span class="text-1 text-muted d-block">
+								<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+							</span> 
+						</div>
+						
+						<div class="col-4 col-md-1 text-center"> 
+							<span class="text-3 text-dark operator-name">Is Enable</span> 
+							<span class="text-1 text-muted d-block">
+								<button class="btn btn-primary btn-sm4 rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Enable"><i class="fa fa-table"></i></button>
+							</span> 
+						</div>
+						
+						<div class="col-4 col-md-1 text-center"> 
+							<span class="text-3 text-dark operator-name">Edit</span> 
+							<span class="text-1 text-muted d-block">
+								<button class="btn btn-success btn-sm4 rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="fa fa-edit"></i></button>
+							</span> 
+						</div>
+						
+						<div class="col-4 col-md-1 text-center"> 
+							<span class="text-3 text-dark operator-name">Delete</span> 
+							<span class="text-1 text-muted d-block">
+								<button class="btn btn-danger btn-sm4 rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="fa fa-trash"></i></button>
+							</span> 
+						</div>
+						</div>
+					</div>
+					
+					<div class="table-inner pb-2">
+					<div class="row flex-row">
+						<div class="col-12 col-md-2"> 
+							<span class="text-3 text-dark operator-name">Display Name/Code</span> 
+							<span class="text-1 text-muted d-block">
+								[1]HNI Traveller/P004
+							</span> 
+						</div>
+						
+						<div class="col-12 col-md-4"> 
+							<span class="text-3 text-dark operator-name">GST Info</span> 
+							<span class="text-1 text-muted d-block border">
+								<div class="amenities-list">
+								<div class="single-amenity">State Code</div>
+								<div class="single-amenity">06</div>
+								</div>
+								
+								<div class="amenities-list">
+								<div class="single-amenity">Number</div>
+								<div class="single-amenity">06AAHCD1753F1ZW</div>
+								</div>
+								
+								<div class="amenities-list">
+								<div class="single-amenity">Email</div>
+								<div class="single-amenity">customer.gst@gigitravelsolutions.com</div>
+								</div>
+								
+								<div class="amenities-list">
+								<div class="single-amenity">Address</div>
+								<div class="single-amenity">B6 Sector 34 infocity 1 Gurgaon</div>
+								</div>
+								
+								<div class="amenities-list">
+								<div class="single-amenity">Phone</div>
+								<div class="single-amenity">9818277749</div>
+								</div>
+								
+							
+								
+							</span> 
+						</div>
+						
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">SuperVisor1 Id</span> 
+							<span class="text-1 text-muted d-block">
+								<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+							</span> 
+						</div>
+						
+						<div class="col-4 col-md-1 text-center"> 
+							<span class="text-3 text-dark operator-name">Is Enable</span> 
+							<span class="text-1 text-muted d-block">
+								<button class="btn btn-primary btn-sm4 rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Enable"><i class="fa fa-table"></i></button>
+							</span> 
+						</div>
+						
+						<div class="col-4 col-md-1 text-center"> 
+							<span class="text-3 text-dark operator-name">Edit</span> 
+							<span class="text-1 text-muted d-block">
+								<button class="btn btn-success btn-sm4 rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="fa fa-edit"></i></button>
+							</span> 
+						</div>
+						
+						<div class="col-4 col-md-1 text-center"> 
+							<span class="text-3 text-dark operator-name">Delete</span> 
+							<span class="text-1 text-muted d-block">
+								<button class="btn btn-danger btn-sm4 rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="fa fa-trash"></i></button>
+							</span> 
+						</div>
+						
+						
+						</div>
+					</div>
+					
+					<div class="table-inner pb-2">
+						<div class="row align-items-sm-center flex-row">
+							<div class="col-12 col-md-4"> 
+								<span class="text-3 text-dark operator-name">
+									<button type="button" class="btn btn-primary">Add New</button>
+								</span> 
+							</div>
+						</div>
+					</div>
+					
+					
+					<div class="table-inner pb-2">
+					<h4 class="text-3 mb-2">Department</h4>
+						<div class="row flex-row">
+						<div class="col-12 col-md-5"> 
+							<span class="text-3 text-dark operator-name">Display Name/ Code</span> 
+						</div>
+						<div class="col-12 col-md-5"> 
+							<span class="text-3 text-dark operator-name">
+							Supervisor 1 id/<br>
+							Supervisor 2 id/<br>
+							Supervisor id List
+							</span> 
+						</div>
+						<div class="col-4 col-md-1 text-center"> 
+							<span class="text-3 text-dark operator-name">Is Enable</span> 
+							<span class="text-1 text-muted d-block">
+								<button class="btn btn-primary btn-sm4 rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Enable"><i class="fa fa-table"></i></button>
+							</span> 
+						</div>
+						
+						<div class="col-4 col-md-1 text-center"> 
+							<span class="text-3 text-dark operator-name">Edit</span> 
+							<span class="text-1 text-muted d-block">
+								<button class="btn btn-success btn-sm4 rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="fa fa-edit"></i></button>
+							</span> 
+						</div>
+						
+						</div>
+					</div>
+					
+					
+					<div class="table-inner pb-2">
+					<h4 class="text-3 mb-2">Band</h4>
+						<div class="row flex-row">
+						<div class="col-12 col-md-5"> 
+							<span class="text-3 text-dark operator-name">Display Name/ Code</span> 
+						</div>
+						<div class="col-12 col-md-5"> 
+							<span class="text-3 text-dark operator-name">
+							Supervisor 1 id/<br>
+							Supervisor 2 id/<br>
+							Supervisor id List
+							</span> 
+						</div>
+						<div class="col-4 col-md-1 text-center"> 
+							<span class="text-3 text-dark operator-name">Is Enable</span> 
+							<span class="text-1 text-muted d-block">
+								<button class="btn btn-primary btn-sm4 rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Enable"><i class="fa fa-table"></i></button>
+							</span> 
+						</div>
+						
+						<div class="col-4 col-md-1 text-center"> 
+							<span class="text-3 text-dark operator-name">Edit</span> 
+							<span class="text-1 text-muted d-block">
+								<button class="btn btn-success btn-sm4 rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="fa fa-edit"></i></button>
+							</span> 
+						</div>
+						
+						</div>
+					</div>
+					
+					<div class="table-inner pb-2">
+					<h4 class="text-3 mb-2">Location</h4>
+						<div class="row flex-row">
+						<div class="col-12 col-md-5"> 
+							<span class="text-3 text-dark operator-name">Display Name/ Code</span> 
+						</div>
+						<div class="col-12 col-md-5"> 
+							<span class="text-3 text-dark operator-name">
+							Supervisor 1 id/<br>
+							Supervisor 2 id/<br>
+							Supervisor id List
+							</span> 
+						</div>
+						<div class="col-4 col-md-1 text-center"> 
+							<span class="text-3 text-dark operator-name">Is Enable</span> 
+							<span class="text-1 text-muted d-block">
+								<button class="btn btn-primary btn-sm4 rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Enable"><i class="fa fa-table"></i></button>
+							</span> 
+						</div>
+						
+						<div class="col-4 col-md-1 text-center"> 
+							<span class="text-3 text-dark operator-name">Edit</span> 
+							<span class="text-1 text-muted d-block">
+								<button class="btn btn-success btn-sm4 rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="fa fa-edit"></i></button>
+							</span> 
+						</div>
+						
+						</div>
+					</div>
+					
+				</div>
+                  <!-- 14th end --> 
+				  
+				  <!-- 15th Travel Policy Configuration
+                  ============================================= -->
+				  <div>
+				  <h2 class="text-6 mb-2">Travel Policy Configuration</h2>
+					<div class="table-inner pb-2">
+						<h4 class="text-3 mb-2">Group Master</h4>
+						<div class="row flex-row">
+						<div class="col-12 col-md-1"> 
+							<span class="text-3 text-dark operator-name">S-No</span> 
+							<span class="text-1 text-muted d-block">[1]</span> 
+						</div>
+						<div class="col-12 col-md-2"> 
+							<span class="text-3 text-dark operator-name">Group ID</span> 
+							<span class="text-1 text-muted d-block">61</span> 
+						</div>						
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">Group Name</span> 
+							<span class="text-1 text-muted d-block">Trip Claim Approveal</span>
+							<button type="button" class="btn btn-primary btn-sm2 mt-2">View</button>
+						</div>
+						<div class="col-12 col-md-2"> 
+							<span class="text-3 text-dark operator-name">Group Type</span> 
+							<span class="text-1 text-muted d-block">Trip Claim Approveal</span>
+						</div>
+						
+						<div class="col-12 col-md-3"> 
+							<span class="text-3 text-dark operator-name">Product Type</span> 
+							<span class="text-1 text-muted d-block">Trip Claim</span>
+						</div>
+						
+						<div class="col-4 col-md-1 text-center"> 
+							<span class="text-3 text-dark operator-name">Edit</span> 
+							<span class="text-1 text-muted d-block">
+								<button class="btn btn-success btn-sm4 rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="fa fa-edit"></i></button>
+							</span> 
+						</div>
+						
+						</div>
+					</div>
+					
+					<div class="table-inner pb-2">
+						<h4 class="text-3 mb-2">Group Details</h4>
+						<div class="row flex-row">
+						<div class="col-12 col-md-1"> 
+							<span class="text-3 text-dark operator-name">S-No</span> 
+							<span class="text-1 text-muted d-block">[1]</span> 
+						</div>
+						<div class="col-12 col-md-2"> 
+							<span class="text-3 text-dark operator-name">Name</span> 
+							<span class="text-1 text-muted d-block">Mr Akhil Kumbar Jain</span> 
+						</div>						
+						<div class="col-12 col-md-2"> 
+							<span class="text-3 text-dark operator-name">Email</span> 
+							<span class="text-1 text-muted d-block">akhil@groupshiva.com</span>
+						</div>
+						<div class="col-12 col-md-2"> 
+							<span class="text-3 text-dark operator-name">Group Name</span> 
+							<span class="text-1 text-muted d-block">Trip Claim Approveal</span>
+						</div>
+						
+						<div class="col-12 col-md-2"> 
+							<span class="text-3 text-dark operator-name">Group Type</span> 
+							<span class="text-1 text-muted d-block">Trip Claim Approver</span>
+						</div>
+						
+						<div class="col-12 col-md-1"> 
+							<span class="text-3 text-dark operator-name">Sequence No</span> 
+							<span class="text-1 text-muted d-block">1</span>
+						</div>
+						
+						<div class="col-12 col-md-1"> 
+							<span class="text-3 text-dark operator-name">Reminder Time</span> 
+							<span class="text-1 text-muted d-block">15</span>
+						</div>
+						
+						<div class="col-4 col-md-1 text-center"> 
+							<span class="text-3 text-dark operator-name">Delete</span> 
+							<span class="text-1 text-muted d-block">
+								<button class="btn btn-danger btn-sm4 rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="fa fa-trash"></i></button>
+							</span> 
+						</div>
+						
+						
+						</div>
+					</div>
+					
+					<div class="table-inner pb-2">
+						<div class="row align-items-sm-center flex-row">
+							<div class="col-12 col-md-4"> 
+								<span class="text-3 text-dark operator-name">
+									<button type="button" class="btn btn-primary">Add New</button>
+								</span> 
+							</div>
+						</div>
+					</div>
+					
+                  </div>
+				  <!-- 15th end -->
+				  
+				  <!-- 16th RM Configuration
+                  ============================================= -->
+				  <div>
+				  <h2 class="text-6 mb-2">RM Configuration</h2>
+					<div class="table-inner pb-2">
+						<div class="row flex-row">
+						<div class="col-12 col-md-4"> 
+							<span class="text-3 text-dark operator-name">Ram Name</span> 
+							<span class="text-1 text-muted d-block">Alias</span> 
+						</div>
+						<div class="col-12 col-md-4"> 
+							<span class="text-3 text-dark operator-name">Billing Entity</span> 
+							<span class="text-1 text-muted d-block">
+							<div class="input-group">
+								<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+							</div>
+							</span> 
+						</div>						
+						<div class="col-12 col-md-4"> 
+							<span class="text-3 text-dark operator-name">Cost Center</span> 
+							<span class="text-1 text-muted d-block">
+							<div class="input-group">
+								<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+							</div>
+							</span>
+						</div>
+						
+						
+						</div>
+					</div>
+					
+					<div class="table-inner pb-2">
+						<div class="row align-items-sm-center flex-row">
+						
+						<div class="col-12 col-md-4"> 
+							<span class="text-3 text-dark operator-name">Department</span> 
+							<span class="text-1 text-muted d-block">
+							<div class="input-group">
+								<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+							</div>
+							</span>
+						</div>
+						
+						
+							<div class="col-12 col-md-4"> 
+							<span class="text-3 text-dark operator-name">Location</span> 
+							<span class="text-1 text-muted d-block">
+							<div class="input-group">
+									<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+							</div>
+							</span>
+						</div>
+						
+						<div class="col-12 col-md-4"> 
+							<span class="text-3 text-dark operator-name">Project Code</span> 
+							<span class="text-1 text-muted d-block">
+							<div class="input-group">
+									<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+							</div>
+							</span>
+						</div>
+						</div>
+					</div>
+					
+					<div class="table-inner pb-2">
+						<div class="row align-items-sm-center flex-row">
+							<div class="col-12 col-md-4"> 
+								<span class="text-3 text-dark operator-name">
+									<button type="button" class="btn btn-primary">Update</button>
+								</span> 
+							</div>
+						</div>
+					</div>
+					
+                  </div>
+				  
+				  <!-- 16th end -->
+				  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Banner
+        ============================================= -->
+        <div class="col-lg-2 mt-4 mt-lg-0">
+          <div class="row">
+            <div class="col-6 col-lg-12 text-center"> <a href="#"><img src="assets/images/small-banner-5.jpg" alt="" title="" class="img-fluid rounded shadow-md"></a> </div>
+            <div class="col-6 col-lg-12 mt-lg-3 text-center"> <a href=""><img src="assets/images/small-banner-6.jpg" alt="" title="" class="img-fluid rounded shadow-md"></a> </div>
+          </div>
+        </div>
+        <!-- Banner end --> 
+        
+      </div>
+    </section>
+  </div>
+  <!-- Content end --> 
+    

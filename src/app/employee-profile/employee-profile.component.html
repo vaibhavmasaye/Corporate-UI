@@ -1,0 +1,1871 @@
+	<!-- Page Header
+    ============================================= -->
+    <section class="page-header page-header-text-light bg-secondary py-4" style="background: url('assets/images/bg.png') center center;">
+        <div class="container">
+          <div class="row text-center">
+            <div class="col-2" style="text-align: left;margin-left: -1.5%">
+				<ul class="breadcrumb mb-0">
+				  <li>{{resource_name}}</li>  
+				</ul>
+			  </div>
+			<div class="col-10">
+			  <ul class="breadcrumb mb-0">
+				<li><a href="index.html">Home</a>/ </li>  
+				<li class="active">User Information</li>
+			  </ul>
+			</div>
+          
+          </div>
+        </div>
+      </section><!-- Page Header end -->
+<div id="content">
+    <section class="container-fluid">
+      <div class="row mt-4">
+        <div class="col-md-12 col-lg-12">
+          <div id="verticalTab">
+            <div class="row no-gutters">
+              <div class="col-md-2 my-0 my-md-4">
+                <ul class="resp-tabs-list">
+                    <li><span><i class="fas fa-mobile-alt"></i></span> User Information</li>
+                    <li><span><i class="fas fa-tv"></i></span> GST Information</li>
+                    <li><span><i class="fas fa-credit-card"></i></span> New GST Details</li>
+                    <li><span><i class="fas fa-wifi"></i></span> Change Password</li>
+                    <li><span><i class="fas fa-phone"></i></span> Organizational Details</li>
+                    <li><span><i class="fas fa-plug"></i></span> Personal Info</li>
+                    <li><span><i class="fas fa-lightbulb"></i></span> Contact Information</li>
+                    <li><span><i class="fas fa-flask"></i></span> Document Information</li>
+                    <li><span><i class="fas fa-tint"></i></span> Preferences</li>
+                    <li><span><i class="fas fa-tint"></i></span> Frequent and Loyalty Membership Programs</li>
+                  </ul>
+              </div>
+              <div class="col-md-10">
+                <div class="resp-tabs-container bg-light shadow-md rounded h-100 p-3"> 
+                  
+                    <!-- 1st User Information
+                    ============================================= -->
+                    <div>
+                    <form [formGroup]="userInfoUpdate" (ngSubmit)="updateUserInfo()">
+                    <h2 class="text-6 mb-2">User Information</h2>
+                      <div class="table-inner pb-2">
+                          <div class="row align-items-sm-center flex-row">
+                            <div class="col-12 col-md-4"> 
+                                <span class="text-3 text-dark operator-name">Full Name*</span> 
+                                <span class="text-1 text-muted d-block">
+                                <input type="text" class="form-control" aria-label="Small" readonly formControlName="fname" aria-describedby="inputGroup-sizing-sm">
+                                </span> 
+                            </div>
+                            <div class="col-12 col-md-4"> 
+                                <span class="text-3 text-dark operator-name">Email*</span> 
+                                <span class="text-1 text-muted d-block"><input type="text" readonly class="form-control" aria-label="Small" formControlName="email_id" aria-describedby="inputGroup-sizing-sm"></span> 
+                            </div>						
+                            <div class="col-12 col-md-4"> 
+                                <span class="text-3 text-dark operator-name">Mobile</span> 
+                                <span class="text-1 text-muted d-block">
+                                <input type="number" class="form-control" aria-label="Small" formControlName="phone_number" aria-describedby="inputGroup-sizing-sm">
+                                </span> 
+                            </div>
+                          </div>
+                          <div class="row align-items-sm-center flex-row">
+                            <div class="col-12 col-md-4"> 
+                                <div *ngIf="u['fname'].touched && u['fname'].invalid" class="alert alert-danger">
+                                    <div *ngIf="u['fname'].errors && u['fname'].errors['required']">This field is required.</div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4"> 
+                                <div *ngIf="u['email_id'].touched && u['email_id'].invalid" class="alert alert-danger">
+                                    <div *ngIf="u['email_id'].errors && u['email_id'].errors['required']">This field is required.</div>
+                                    <div *ngIf="u['email_id'].errors && u['email_id'].errors['email']">Please, enter valid email address.</div>
+                                </div>
+                            </div>						
+                            <div class="col-12 col-md-4"> 
+                                <div *ngIf="u['phone_number'].touched && u['phone_number'].invalid" class="alert alert-danger">
+                                    <div *ngIf="u['phone_number'].errors && u['phone_number'].errors['required']">This field is required.</div> 			  
+                                    <div *ngIf="u['phone_number'].errors && u['phone_number'].errors['minlength']">Phone Number should be 10 character.</div>
+                                    <div *ngIf="u['phone_number'].errors && u['phone_number'].errors['maxlength']">Phone Number should only be 10 character.</div>
+                                </div>
+                            </div>
+                          </div>
+                      </div>
+                      
+                      <div class="table-inner pb-2 pt-2">
+                          <div class="row align-items-sm-center flex-row">
+                          
+                            <div class="col-12 col-md-4"> 
+                                <span class="text-3 text-dark operator-name">Is Meal</span> 
+                                <span class="text-1 text-muted d-block">
+                                    <select class="custom-select" id="title" formControlName="is_meal" required="">
+                                            <option value="true">Enabled</option>
+                                            <option value="false">Disabled</option>
+                                    </select>
+                                </span> 
+                            </div>
+                            
+                            <div class="col-12 col-md-4"> 
+                                <span class="text-3 text-dark operator-name">Is Baggage</span> 
+                                <span class="text-1 text-muted d-block">
+                                    <select class="custom-select" id="title" formControlName="is_baggage" required="">
+                                            <option value="true">Enabled</option>
+                                            <option value="false">Disabled</option>
+                                    </select>
+                                </span> 
+                            </div>
+                                                
+                            <div class="col-12 col-md-4"> 
+                                <span class="text-3 text-dark operator-name">Is Hold Booking</span> 
+                                <span class="text-1 text-muted d-block">
+                                    <select class="custom-select" id="title" formControlName="is_hold_booking" required="">
+                                        <option value="true">Enabled</option>
+                                        <option value="false">Disabled</option>
+                                    </select>
+                                </span> 
+                            </div>
+                          </div>
+                      </div>
+                      
+                      <div class="table-inner pb-2 pt-2">
+                          <div class="row align-items-sm-center flex-row">
+
+                            <div class="col-12 col-md-4"> 
+                                <span class="text-3 text-dark operator-name">Is Approver</span> 
+                                <span class="text-1 text-muted d-block">
+                                    <select class="custom-select" id="title" formControlName="is_approver" required="">
+                                            <option value="true">Enabled</option>
+                                            <option value="false">Disabled</option>
+                                    </select>
+                                </span> 
+                            </div>
+                            
+                            <div class="col-12 col-md-4"> 
+                                <span class="text-3 text-dark operator-name">Is Travel Arranger</span> 
+                                <span class="text-1 text-muted d-block">
+                                    <select class="custom-select" id="title" formControlName="is_travel_arranger" required="">
+                                          <option value="true">Enabled</option>
+                                          <option value="false">Disabled</option>
+                                    </select>
+                                </span> 
+                            </div>
+                                                
+                            <div class="col-12 col-md-4"> 
+                                <span class="text-3 text-dark operator-name">Is Trip Claim Approver</span> 
+                                <span class="text-1 text-muted d-block">
+                                    <select class="custom-select" id="title" formControlName="is_trip_claim_approver" required="">
+                                      <option value="true">Enabled</option>
+                                      <option value="false">Disabled</option>
+                                    </select>
+                                </span> 
+                            </div>
+                                                 
+                          </div>
+                      </div>
+                      
+                      <div class="table-inner pb-2 pt-2">
+                          <div class="row align-items-sm-center flex-row">
+                              <div class="col-12 col-md-4"> 
+                                  <span class="text-1 text-muted d-block">
+                                      <button type="submit" class="btn btn-primary">Update</button>
+                                  </span> 
+                              </div>
+                          </div>
+                      </div>
+
+                    </form>  
+                      
+                      <div class="table-inner pb-2 pt-2">
+                        <form [formGroup]="RoleUpdate" (ngSubmit)="updateRole()">
+                          <div class="row align-items-sm-center flex-row">
+                            
+                                <div class="col-12 col-md-6"> 
+                                    <span class="text-3 text-dark operator-name">Role</span> 
+                                    <span class="text-1 text-muted d-block">
+                                        <div class="input-group input-group-sm">
+                                            <select class="custom-select" id="title" required="" formControlName="role">
+                                                <option value="">Select</option>
+                                                <option *ngFor="let x of roles" value="{{x.role_id}}">{{x.name}}</option>	
+                                            </select>				  
+                                            <button type="submit" class="btn btn-primary btn-sm2 ml-2">Update</button>
+                                        </div>
+                                    </span> 
+                                </div>
+                          
+                          </div>
+                        </form>
+                      </div>
+                      
+                    
+                    </div>
+                    <!-- 1st end --> 
+                    
+                    <!-- 2nd GST Information
+                    ============================================= -->
+                    <div>
+					
+                        <h2 class="text-6 mb-2">GST Information</h2>
+                        <div *ngFor="let x of gst_details" class=" border-top">
+                        
+                        <div class="table-inner pb-2">
+                            <div class="row align-items-sm-center flex-row">
+                            <div class="col-12 col-md-4"> 
+                                <span class="text-3 text-dark operator-name">GST Number</span> 
+                                <span class="text-1 text-muted d-block">{{x.gst_number}}</span> 
+                            </div>
+                            <div class="col-12 col-md-4"> 
+                                <span class="text-3 text-dark operator-name">GST Email</span> 
+                                <span class="text-1 text-muted d-block">{{x.gst_email}}</span> 
+                            </div>						
+                            <div class="col-12 col-md-4"> 
+                                <span class="text-3 text-dark operator-name">GST Name</span> 
+                                <span class="text-1 text-muted d-block">{{x.gst_holder_name}}</span> 
+                            </div>
+                            </div>
+                        </div>
+                        
+                        <div class="table-inner pb-2 pt-2">
+                            <div class="row align-items-sm-center flex-row">
+                            
+                            <div class="col-12 col-md-4"> 
+                                <span class="text-3 text-dark operator-name">GST Phone No</span> 
+                                <span class="text-1 text-muted d-block">
+                                {{x.gst_phone_number}}
+                                </span> 
+                            </div>
+                            
+                            <div class="col-12 col-md-4"> 
+                                <span class="text-3 text-dark operator-name">GST Address</span> 
+                                <span class="text-1 text-muted d-block">
+                                    {{x.gst_address}}
+                                </span> 
+                            </div>
+                                                
+                            <div class="col-12 col-md-4"> 
+                                <span class="text-3 text-dark operator-name">GST State Code</span> 
+                                <span class="text-1 text-muted d-block">
+                                    {{x.gst_state_code}}
+                                </span>
+                                <!-- <span class="text-1 text-muted d-block">
+                                    <select class="custom-select" id="title" required="">
+                                        <option value="">Select One</option>
+                                        <option>PartnerBranch</option>
+                                        <option>Staff</option>
+                                        <option>Corporate</option>
+                                        <option>CorporateBranch</option>
+                                        <option>Distributor</option>
+                                        <option>Employee</option>
+                                        <option>Agent</option>
+                                        <option>Customer</option>
+                                        <option>Supplier</option>
+                                    </select>
+                                </span>  -->
+                            </div>
+                        </div>
+                        </div>
+                        
+                        <div class="table-inner pb-2 pt-2">
+                            <div class="row align-items-sm-center flex-row">
+                                <div class="col-12 col-md-4"> 
+                                    <span class="text-1 text-muted d-block">
+                                        <button type="button" class="btn btn-primary" (click)="deleteGst(x.sno)">Delete</button>
+                                    </span> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-inner pb-2 pt-2" style="height: 30px;"></div>
+                        </div>
+                      </div>
+                    <!-- 2nd end --> 
+                    
+                    <!-- 3rd New GST Details
+                    ============================================= -->
+                    <div>
+                        <h2 class="text-6 mb-2">GST Information</h2>
+                        <form [formGroup]="formVar" (ngSubmit)="addGst()">
+                          <div class="table-inner pb-2 border-top">
+                              <div class="row align-items-sm-center flex-row">
+                              <div class="col-12 col-md-4"> 
+                                  <span class="text-3 text-dark operator-name">GST Number</span> 
+                                  <span class="text-1 text-muted d-block">
+                                      <input type="text" class="form-control" formControlName="gst_number" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></span> 
+                                  
+                              </div>
+                              <div class="col-12 col-md-4"> 
+                                  <span class="text-3 text-dark operator-name">GST Email</span> 
+                                  <span class="text-1 text-muted d-block">
+                                      <input type="text" class="form-control" formControlName="gst_email" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></span> 
+                              </div>					
+                              <div class="col-12 col-md-4"> 
+                                  <span class="text-3 text-dark operator-name">GST Holder Name</span> 
+                                  <span class="text-1 text-muted d-block">
+                                      <input type="text" class="form-control" formControlName="gst_holder_name" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></span> 
+                                      
+                                  </div>
+                                  <div class="col-12 col-md-4"> 
+                                      <div *ngIf="f['gst_number'].touched && f['gst_number'].invalid" class="alert alert-danger">
+                                          <div *ngIf="f['gst_number'].errors && f['gst_number'].errors['required']">GST Number is required.</div>
+                                      </div>
+                                  </div>
+                                  <div class="col-12 col-md-4">
+                                      <div *ngIf="f['gst_email'].touched && f['gst_email'].invalid" class="alert alert-danger">
+                                          <div *ngIf="f['gst_email'].errors && f['gst_email'].errors['required']">GST Email is required.</div>
+                                          <div *ngIf="f['gst_email'].errors && f['gst_email'].errors['email']">Please, enter valid email address.</div>
+                                      </div>
+                                  </div>					
+                                  <div class="col-12 col-md-4">
+                                      <div *ngIf="f['gst_holder_name'].touched && f['gst_holder_name'].invalid" class="alert alert-danger">
+                                          <div *ngIf="f['gst_holder_name'].errors && f['gst_holder_name'].errors['required']">GST Holder Name is required.</div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="table-inner pb-2">
+                              <div class="row align-items-sm-center flex-row">
+                              <div class="col-12 col-md-4"> 
+                                  <span class="text-3 text-dark operator-name">GST Phone Number</span> 
+                                  <span class="text-1 text-muted d-block">
+                                      <input type="number" class="form-control" formControlName="gst_phone_number" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></span> 
+                                      
+                                  </div>
+                              <div class="col-12 col-md-4"> 
+                                  <span class="text-3 text-dark operator-name">GST Address</span> 
+                                  <span class="text-1 text-muted d-block">
+                                      <input type="text" class="form-control" formControlName="gst_address" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></span> 
+                                      
+                                  </div>					
+                              <div class="col-12 col-md-4"> 
+                                  <span class="text-3 text-dark operator-name">GST State Code</span> 
+                                  <span class="text-1 text-muted d-block">
+                                      <div class="input-group input-group-sm">
+                                          <select class="custom-select" id="title" required formControlName="gst_state_code">
+                                              <option value="">Select State</option>
+                                              <option *ngFor="let x of states" [value]="x.state_code">{{x.state_name}}</option>									
+                                          </select>
+                                      </div>
+                                  </span> 
+                              </div>
+                              <div class="col-12 col-md-4"> 
+                                  <div *ngIf="f['gst_phone_number'].touched && f['gst_phone_number'].invalid" class="alert alert-danger">
+                                          <div *ngIf="f['gst_phone_number'].errors && f['gst_phone_number'].errors['required']">Phone Number is required.</div> 			  
+                                          <div *ngIf="f['gst_phone_number'].errors && f['gst_phone_number'].errors['minlength']">Phone Number should be 10 character.</div>
+                                          <div *ngIf="f['gst_phone_number'].errors && f['gst_phone_number'].errors['maxlength']">Phone Number should only be 10 character.</div>
+                                      </div>
+                                  </div>
+                              <div class="col-12 col-md-4"> 
+                                  <div *ngIf="f['gst_address'].touched && f['gst_address'].invalid" class="alert alert-danger">
+                                          <div *ngIf="f['gst_address'].errors && f['gst_address'].errors['required']">GST Address is required.</div>
+                                      </div>
+                                  </div>					
+                              <div class="col-12 col-md-4"> 
+                                  <div *ngIf="f['gst_state_code'].touched && f['gst_state_code'].invalid" class="alert alert-danger">
+                                      <div *ngIf="f['gst_state_code'].errors && f['gst_state_code'].errors['required']">GST State Code is required.</div>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <div class="table-inner pb-2">
+                              <div class="row align-items-sm-center flex-row">
+                                  <div class="col-12 col-md-4"> 
+                                      <span class="text-3 text-dark operator-name">
+                                          <button class="btn btn-primary"  type="submit">Update</button>
+                                      </span> 
+                                  </div>
+                              </div>
+                          </div>
+                        </form>
+                        </div>
+                    <!-- 3rd end --> 
+                    
+                    <!-- 4th Change Password
+                    ============================================= -->
+                    <div>
+                    <h2 class="text-6 mb-2">Change Password</h2>
+                    <form [formGroup]="password_form" (ngSubmit)="changingPassword()">
+                      <div class="table-inner pb-2 border-top">
+                          <div class="row align-items-sm-center flex-row">
+                          
+                          <div class="col-12 col-md-3"> 
+                              <span class="text-1 text-muted d-block">
+                                  <div class="custom-control custom-checkbox">
+                                          <input id="save-card1" name="savecard1" checked class="custom-control-input" type="checkbox">
+                                          <label class="custom-control-label" for="save-card1">Send Email</label>
+                                  </div>
+                              </span> 
+                          </div>
+                          
+                          <div class="col-12 col-md-3"> 
+                              <span class="text-3 text-dark operator-name">Old password</span> 
+                              <span class="text-1 text-muted d-block">
+                                  <input type="password" class="form-control" required formControlName="old_password" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                  
+                              </span> 
+                          </div>
+                          
+                          <div class="col-12 col-md-3"> 
+                              <span class="text-3 text-dark operator-name">New password</span> 
+                              <span class="text-1 text-muted d-block">
+                                  <input type="password" class="form-control" required formControlName="new_password" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                              </span> 
+                          </div>
+                          
+                          <div class="col-12 col-md-3"> 
+                              <span class="text-3 text-dark operator-name">Confirm password</span> 
+                              <span class="text-1 text-muted d-block">
+                                  <input type="password" class="form-control" required formControlName="confirm_password" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                              </span> 
+                          </div>
+                          <!-- <div class="col-12  col-md-3"></div>
+                          <div class="col-12  col-md-3">
+                            <p style="color: green;" *ngIf="old_password_success">Old Password Validation Successful!</p>                          
+                          </div>-->
+                          <div class="col-12 col-md-3"> 
+                            
+                        </div>
+                        
+                        <div class="col-12 col-md-3" style="margin-top: 0%;padding-top: 0%;"> 
+                            <div *ngIf="fpswd['old_password'].touched && fpswd['old_password'].invalid" class="alert alert-danger">
+                                <div *ngIf="fpswd['old_password'].errors && fpswd['old_password'].errors['required']">This field is required.</div> 			  
+                                <div *ngIf="fpswd['old_password'].errors && fpswd['old_password'].errors['minlength']">Password should atleast be 8 character.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-3" style="margin-top: 0%;padding-top: 0%;"> 
+                            <div *ngIf="fpswd['new_password'].touched && fpswd['new_password'].invalid" class="alert alert-danger">
+                                <div *ngIf="fpswd['new_password'].errors && fpswd['new_password'].errors['required']">This field is required.</div> 			  
+                                <div *ngIf="fpswd['new_password'].errors && fpswd['new_password'].errors['minlength']">Password should atleast be 8 character.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-3" style="margin-top: 0%;padding-top: 0%;"> 
+                            <div *ngIf="(fpswd['confirm_password'].touched && fpswd['confirm_password'].invalid) || fpswd['confirm_password'].touched" class="alert alert-danger">
+                                <div *ngIf="fpswd['confirm_password'].errors && fpswd['confirm_password'].errors['required']">This field is required.</div> 			  
+                                <div *ngIf="fpswd['confirm_password'].errors && fpswd['confirm_password'].errors['minlength']">Password should atleast be 8 character.</div>
+                                <div *ngIf="fpswd['confirm_password'].touched && fpswd['confirm_password'] !== fpswd['new_password']">New and confirm passwords should match!</div>
+                            </div>
+                            <!-- <div *ngIf="fpswd['confirm_password'].touched" class="alert alert-danger">
+                                
+                            </div> -->
+                        </div>
+                          <!-- <div class="col-12  col-md-6">
+                            <p style="color: red;" *ngIf="match_password === 'Passwords does not match. Please enter password again.'">{{match_password}}</p>  
+                            <p style="color: green;" *ngIf="match_password === 'Passwords match'">{{match_password}}</p>                           
+                          </div>  -->
+                          </div>
+                          
+                      </div>
+                      <div class="table-inner pb-2">
+                          <div class="row align-items-sm-center flex-row">
+                              <div class="col-12 col-md-4"> 
+                                  <span class="text-3 text-dark operator-name">
+                                      <button type="submit" class="btn btn-primary">Update</button>
+                                  </span> 
+                              </div>
+                          </div>
+                      </div>
+                      </form>
+                    </div>
+                    <!-- 4th end --> 
+                    
+                    <!-- 5th Organizational Details
+                    ============================================= -->
+                    <div>
+                        <form [formGroup]="orgDetailsUpdate" (ngSubmit)="updateOrgDetails()">
+                      <h2 class="text-6 mb-2"> Organizational Details</h2>
+                      <div class="table-inner pb-2">
+                        <div class="row align-items-sm-center flex-row">
+                          <div class="col-12 col-md-4"> 
+                              <span class="text-3 text-dark operator-name">Employee Code</span> 
+                              <span class="text-1 text-muted d-block">
+                              <input type="text" class="form-control" aria-label="Small" formControlName="employee_code" required  id="employee_code" aria-describedby="inputGroup-sizing-sm">
+                              </span> 
+                          </div>
+                          <div class="col-12 col-md-4"> 
+                              <span class="text-3 text-dark operator-name">Designation</span> 
+                              <span class="text-1 text-muted d-block">
+                                  <input type="text" class="form-control" aria-label="Small" formControlName="designation" aria-describedby="inputGroup-sizing-sm" required  id="designation" >
+                              </span> 
+                          </div>					
+                          <div class="col-12 col-md-4"> 
+                              <span class="text-3 text-dark operator-name">Band</span> 
+                              <span class="text-1 text-muted d-block">
+                                  <input type="text" class="form-control" aria-label="Small" formControlName="band" aria-describedby="inputGroup-sizing-sm" required  id="band">
+                              </span> 
+                          </div>
+                        </div>
+                        <div class="row align-items-sm-center flex-row">
+                            <div class="col-12 col-md-4"> 
+                                <div *ngIf="o['employee_code'].touched && o['employee_code'].invalid" class="alert alert-danger">
+                                    <div *ngIf="o['employee_code'].errors && o['employee_code'].errors['required']">This field is required.</div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4"> 
+                                <div *ngIf="o['designation'].touched && o['designation'].invalid" class="alert alert-danger">
+                                    <div *ngIf="o['designation'].errors && o['designation'].errors['required']">This field is required.</div>
+                                </div>
+                            </div>					
+                            <div class="col-12 col-md-4"> 
+                                <div *ngIf="o['band'].touched && o['band'].invalid" class="alert alert-danger">
+                                    <div *ngIf="o['band'].errors && o['band'].errors['required']">This field is required.</div>
+                                </div>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="table-inner pb-2">
+                          <div class="row align-items-sm-center flex-row">
+                          <div class="col-12 col-md-4"> 
+                              <span class="text-3 text-dark operator-name">Location</span> 
+                              <span class="text-1 text-muted d-block">
+                                  <div class="input-group input-group-sm">
+                                    <select class="custom-select" id="title" required formControlName="location">
+										<option value="">Select State</option>
+										<option *ngFor="let x of states" value="{{x.id}}">{{x.state_name}}</option>									
+									</select>
+                                  </div>
+                              </span> 
+                          </div>
+                          <div class="col-12 col-md-4"> 
+                              <span class="text-3 text-dark operator-name">Department</span> 
+                              <span class="text-1 text-muted d-block">
+                                  <div class="input-group input-group-sm">
+                                      <select class="custom-select" id="title" required formControlName="department">
+										<option value="">Select Department</option>
+										<option *ngFor="let x of department" value="{{x.dep_id}}">{{x.dep_name}}</option>									
+									</select>
+                                  </div>
+                              </span> 
+                          </div>					
+                          <div class="col-12 col-md-4"> 
+                              <span class="text-3 text-dark operator-name">Cost Center</span> 
+                              <span class="text-1 text-muted d-block">
+                                  <div class="input-group input-group-sm">
+                                      <select class="custom-select" formControlName="cost_center" id="title" required>
+                                      <option value="">Select One</option>
+                                      <option value="Enable">Enable</option>
+                                      <option value="Disable">Disable</option>
+                                      </select>
+                                  </div>
+                              </span> 
+                          </div>
+                        </div>
+                        <div class="row align-items-sm-center flex-row">
+                            <div class="col-12 col-md-4"> 
+                                <div *ngIf="o['location'].touched && o['location'].invalid" class="alert alert-danger">
+                                    <div *ngIf="o['location'].errors && o['location'].errors['required']">This field is required.</div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4"> 
+                                <div *ngIf="o['department'].touched && o['department'].invalid" class="alert alert-danger">
+                                    <div *ngIf="o['department'].errors && o['department'].errors['required']">This field is required.</div>
+                                </div>
+                            </div>					
+                            <div class="col-12 col-md-4"> 
+                                <div *ngIf="o['cost_center'].touched && o['cost_center'].invalid" class="alert alert-danger">
+                                    <div *ngIf="o['cost_center'].errors && o['cost_center'].errors['required']">This field is required.</div>
+                                </div>
+                            </div>
+                          </div>
+                      </div>
+                      
+                      <div class="table-inner pb-2">
+                          <div class="row align-items-sm-center flex-row">
+                          <div class="col-12 col-md-4"> 
+                              <span class="text-3 text-dark operator-name">Project Code</span> 
+                              <span class="text-1 text-muted d-block">
+                                  <div class="input-group input-group-sm">
+                                      <select class="custom-select" formControlName="project_code" id="title" required>
+                                        <option value="">Select One</option>
+                                        <option value="1">Enable</option>
+                                      <option value="0">Disable</option>
+                                      </select>
+                                  </div>
+                              </span> 
+                          </div>
+                          <div class="col-12 col-md-4"> 
+                              <span class="text-3 text-dark operator-name">Domestic Eligibility</span> 
+                              <span class="text-1 text-muted d-block">
+                                <div class="input-group input-group-sm">
+                                    <select class="custom-select" formControlName="domestic_eligibility" id="title" required>
+                                      <option value="">Select One</option>
+                                      <option value="1">Enable</option>
+                                      <option value="0">Disable</option>
+                                    </select>
+                                </div>
+                            </span>
+                          </div>	
+  
+                          <div class="col-12 col-md-4"> 
+                              <span class="text-3 text-dark operator-name">International Eligibility</span> 
+                              <span class="text-1 text-muted d-block">
+                                <div class="input-group input-group-sm">
+                                    <select class="custom-select" formControlName="international_eligibility" id="title" required>
+                                      <option value="">Select One</option>
+                                      <option value="1">Enable</option>
+                                      <option value="0">Disable</option>
+                                    </select>
+                                </div>
+                            </span>
+                          </div>	
+                      </div>
+                      <div class="row align-items-sm-center flex-row">
+                        <div class="col-12 col-md-4"> 
+                            <div *ngIf="o['project_code'].touched && o['project_code'].invalid" class="alert alert-danger">
+                                <div *ngIf="o['project_code'].errors && o['project_code'].errors['required']">This field is required.</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4"> 
+                            <div *ngIf="o['domestic_eligibility'].touched && o['domestic_eligibility'].invalid" class="alert alert-danger">
+                                <div *ngIf="o['domestic_eligibility'].errors && o['domestic_eligibility'].errors['required']">This field is required.</div>
+                            </div>
+                        </div>					
+                        <div class="col-12 col-md-4"> 
+                            <div *ngIf="o['international_eligibility'].touched && o['international_eligibility'].invalid" class="alert alert-danger">
+                                <div *ngIf="o['international_eligibility'].errors && o['international_eligibility'].errors['required']">This field is required.</div>
+                            </div>
+                        </div>
+                      </div>
+                      </div>
+                      
+                      <div class="table-inner pb-2">
+                          <div class="row align-items-sm-center flex-row">
+                          <div class="col-12 col-md-3"> 
+                              <span class="text-3 text-dark operator-name">Date Of Joining</span> 
+                              <span class="text-1 text-muted d-block">
+                                  <input id="FromDate" type="text" formControlName="date_of_joining" class="form-control" required placeholder="YYYY-MM-DD">
+                              </span> 
+                          </div>
+                          
+                          <div class="col-12 col-md-3"> 
+                              <span class="text-3 text-dark operator-name">Date Of Termination</span> 
+                              <span class="text-1 text-muted d-block">
+                                  <input id="todate" type="text" formControlName="date_of_termination" class="form-control" required placeholder="YYYY-MM-DD">
+                              </span> 
+                          </div>
+                       </div>
+                      </div>
+                      <div class="row align-items-sm-center flex-row">
+                        <div class="col-12 col-md-3"> 
+                            <div *ngIf="o['date_of_joining'].touched && o['date_of_joining'].invalid" class="alert alert-danger">
+                                <div *ngIf="o['date_of_joining'].errors && o['date_of_joining'].errors['required']">This field is required.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-3"> 
+                            <div *ngIf="o['date_of_termination'].touched && o['date_of_termination'].invalid" class="alert alert-danger">
+                                <div *ngIf="o['date_of_termination'].errors && o['date_of_termination'].errors['required']">This field is required.</div>
+                            </div>
+                        </div>
+                     </div>
+                      
+                      <div class="table-inner pb-2">
+                          <div class="row align-items-sm-center flex-row">
+                              <div class="col-12 col-md-4"> 
+                                  <span class="text-3 text-dark operator-name">
+                                      <button type="submit" class="btn btn-primary">Upload</button>
+                                  </span> 
+                              </div>
+                          </div>
+                      </div>
+                      </form>
+                    </div>
+                    <!-- 5th end --> 
+                    
+                    <!-- 6th Personal Info
+                    ============================================= -->
+                    <div>
+                    <form [formGroup]="personalInfoUpdate" (ngSubmit)="updatePersonalInfo()">   
+                      <h2 class="text-6 mb-2"> Personal Info (Details as Passport)</h2>
+                      <div class="table-inner pb-2">
+                        <div class="row align-items-sm-center flex-row">
+                          <div class="col-12 col-md-4"> 
+                              <span class="text-3 text-dark operator-name">Title</span> 
+                              <span class="text-1 text-muted d-block">
+                                <select class="custom-select" id="title" required formControlName="title">
+                                    <option value="0">Select Title</option>
+                                    <option *ngFor="let x of titles" value="{{x.title_name}}">{{x.title_name}}</option>									
+                                </select>
+                              </span> 
+                          </div>
+                          <div class="col-12 col-md-4"> 
+                              <span class="text-3 text-dark operator-name">First Name</span> 
+                              <span class="text-1 text-muted d-block">
+                                  <input type="text" class="form-control" formControlName="fname" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                              </span> 
+                          </div>					
+                          <div class="col-12 col-md-4"> 
+                              <span class="text-3 text-dark operator-name">Last Name</span> 
+                              <span class="text-1 text-muted d-block">
+                                  <input type="text" class="form-control" formControlName="last_name" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                              </span> 
+                          </div>
+                        </div>
+                        <div class="row align-items-sm-center flex-row">
+                            <div class="col-12 col-md-4"> 
+                                
+                            </div>
+                            <div class="col-12 col-md-4"> 
+                                <div *ngIf="pr['fname'].touched && pr['fname'].invalid" class="alert alert-danger">
+                                    <div *ngIf="pr['fname'].errors && pr['fname'].errors['required']">This field is required.</div>
+                                </div>
+                            </div>					
+                            <div class="col-12 col-md-4"> 
+                               
+                            </div>
+                          </div>
+                      </div>
+                      
+                      <div class="table-inner pb-2">
+                          <div class="row align-items-sm-center flex-row">
+                          <div class="col-12 col-md-4"> 
+                              <span class="text-3 text-dark operator-name">Gender</span> 
+                              <span class="text-1 text-muted d-block">
+                                <select class="custom-select" id="title" required formControlName="gender">
+                                    <option value="0">Select Gender</option>
+                                    <option *ngFor="let x of gender" value="{{x.gen_name}}">{{x.gen_name}}</option>									
+                                </select>
+                              </span> 
+                          </div>
+                          <div class="col-12 col-md-4"> 
+                              <span class="text-3 text-dark operator-name">Residency</span> 
+                              <span class="text-1 text-muted d-block">
+                                <select class="custom-select" id="title" required formControlName="residency">
+                                    <option value="0">Select Residency</option>
+                                    <option *ngFor="let x of states" value="{{x.id}}">{{x.state_name}}</option>									
+                                </select>
+                              </span> 
+                          </div>					
+                          <div class="col-12 col-md-4"> 
+                              <span class="text-3 text-dark operator-name">Nationality</span> 
+                              <span class="text-1 text-muted d-block">
+                                  <select class="custom-select" id="title" required="" formControlName="nationality">
+                                    <option value="0">Select Nationality</option>    
+                                    <option value="India">India</option>
+                                  </select>
+                              </span> 
+                          </div>	
+                          </div>
+                          <div class="row align-items-sm-center flex-row">
+                            <div class="col-12 col-md-4"> 
+                                <div *ngIf="pr['gender'].touched && pr['gender'].invalid" class="alert alert-danger">
+                                    <div *ngIf="pr['gender'].errors && pr['gender'].errors['required']">This field is required.</div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4"> 
+                                <div *ngIf="pr['residency'].touched && pr['residency'].invalid" class="alert alert-danger">
+                                    <div *ngIf="pr['residency'].errors && pr['residency'].errors['required']">This field is required.</div>
+                                </div>
+                            </div>					
+                            <div class="col-12 col-md-4"> 
+                                <div *ngIf="pr['nationality'].touched && pr['nationality'].invalid" class="alert alert-danger">
+                                    <div *ngIf="pr['nationality'].errors && pr['nationality'].errors['required']">This field is required.</div>
+                                </div>
+                            </div>
+                          </div>
+                      </div>
+                      
+                      <div class="table-inner pb-2">
+                          <div class="row align-items-sm-center flex-row">
+                          <div class="col-12 col-md-4"> 
+                              <span class="text-3 text-dark operator-name">Date Of Birth</span> 
+                              <span class="text-1 text-muted d-block">
+                                  <input id="datebirth" type="text" formControlName="dob" class="form-control" required="" placeholder="YYYY-MM-DD">
+                              </span> 
+                          </div>
+                          <div class="col-12 col-md-4"> 
+                              <span class="text-3 text-dark operator-name">Flight Travel Arranger Group</span> 
+                              <span class="text-1 text-muted d-block">
+                                  <select class="custom-select" id="title" required=""  formControlName="is_flight_arranger_group" >
+                                    <option value="true">Enabled</option>
+                                      <option value="false">Disabled</option>
+                                  </select>
+                              </span> 
+                          </div>					
+                          <div class="col-12 col-md-4"> 
+                              <span class="text-3 text-dark operator-name">Flight Approver Group</span> 
+                              <span class="text-1 text-muted d-block">
+                                  <select class="custom-select" id="title" required=""  formControlName="is_flight_approver_group">
+                                    <option value="true">Enabled</option>
+                                      <option value="false">Disabled</option>
+                                  </select>
+                              </span> 
+                          </div>	
+                          </div>
+                          <div class="row align-items-sm-center flex-row">
+                            <div class="col-12 col-md-4"> 
+                                <div *ngIf="pr['dob'].touched && pr['dob'].invalid" class="alert alert-danger">
+                                    <div *ngIf="pr['dob'].errors && pr['dob'].errors['required']">This field is required.</div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4"> 
+                                <div *ngIf="pr['is_flight_arranger_group'].touched && pr['is_flight_arranger_group'].invalid" class="alert alert-danger">
+                                    <div *ngIf="pr['is_flight_arranger_group'].errors && pr['is_flight_arranger_group'].errors['required']">This field is required.</div>
+                                </div>
+                            </div>					
+                            <div class="col-12 col-md-4"> 
+                                <div *ngIf="pr['is_flight_approver_group'].touched && pr['is_flight_approver_group'].invalid" class="alert alert-danger">
+                                    <div *ngIf="pr['is_flight_approver_group'].errors && pr['is_flight_approver_group'].errors['required']">This field is required.</div>
+                                </div>
+                            </div>
+                          </div>
+                      </div>
+                      
+                      <div class="table-inner pb-2">
+                          <div class="row align-items-sm-center flex-row">
+                          <div class="col-12 col-md-4"> 
+                              <span class="text-3 text-dark operator-name">Profile Type</span> 
+                              <span class="text-1 text-muted d-block">
+                                <select class="custom-select" id="title" required formControlName="profile_type">
+                                    <option value="0">Select Profile Type</option>
+                                    <option value="2">Partner</option>
+                                    <option value="3">PartnerBranch</option>
+                                    <option value="6">Staff</option>
+                                    <option value="4">Corporate</option>
+                                    <option value="5">CorporateBranch</option>
+                                    <option value="7">Distributor</option>
+                                    <option value="8">Employee</option>
+                                    <option value="1">Agent</option>
+                                    <option value="10">Customer</option>
+                                    <option value="7">Supplier</option>									
+                                </select>
+                              </span> 
+                          </div>
+                          <div class="col-12 col-md-4"> 
+                              <span class="text-3 text-dark operator-name">Hotel Travel Arranger Group</span> 
+                              <span class="text-1 text-muted d-block">
+                                  <select class="custom-select" id="title" required="" formControlName="htl_travel_arranger_group">
+                                    <option value="">Select</option>
+                                    <option value="1">Enabled</option>
+                                    <option value="0">Disabled</option>
+                                  </select>
+                              </span> 
+                          </div>					
+                          <div class="col-12 col-md-4"> 
+                              <span class="text-3 text-dark operator-name">Hotel Approver Group</span> 
+                              <span class="text-1 text-muted d-block">
+                                  <select class="custom-select" id="title" required="" formControlName="htl_approver_group">
+                                    <option value="">Select</option>
+                                    <option value="1">Enabled</option>
+                                    <option value="0">Disabled</option>
+                                  </select>
+                              </span> 
+                          </div>	
+                          </div>
+                          <div class="row align-items-sm-center flex-row">
+                            <div class="col-12 col-md-4"> 
+                                <div *ngIf="pr['profile_type'].touched && pr['profile_type'].invalid" class="alert alert-danger">
+                                    <div *ngIf="pr['profile_type'].errors && pr['profile_type'].errors['required']">This field is required.</div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4"> 
+                                <div *ngIf="pr['htl_travel_arranger_group'].touched && pr['htl_travel_arranger_group'].invalid" class="alert alert-danger">
+                                    <div *ngIf="pr['htl_travel_arranger_group'].errors && pr['htl_travel_arranger_group'].errors['required']">This field is required.</div>
+                                </div>
+                            </div>					
+                            <div class="col-12 col-md-4"> 
+                                <div *ngIf="pr['htl_approver_group'].touched && pr['htl_approver_group'].invalid" class="alert alert-danger">
+                                    <div *ngIf="pr['htl_approver_group'].errors && pr['htl_approver_group'].errors['required']">This field is required.</div>
+                                </div>
+                            </div>
+                          </div>
+                      </div>
+                      
+                      <div class="table-inner pb-2">
+                          <div class="row align-items-sm-center flex-row">
+                          <div class="col-12 col-md-4"> 
+                              <span class="text-3 text-dark operator-name">Claim Approver Group</span> 
+                              <span class="text-1 text-muted d-block">
+                                  <select class="custom-select" id="title" required="" formControlName="claim_approver_group">
+                                    <option value="">Select</option>
+                                    <option value="1">Enabled</option>
+                                    <option value="0">Disabled</option>
+                                  </select>
+                              </span> 
+                              <div *ngIf="pr['claim_approver_group'].touched && pr['claim_approver_group'].invalid" class="alert alert-danger">
+                                <div *ngIf="pr['claim_approver_group'].errors && pr['claim_approver_group'].errors['required']">This field is required.</div>
+                            </div>
+                          </div>
+                          <div class="col-12 col-md-4"> 
+                              <span class="text-3 text-dark operator-name">
+                              <button type="submit" class="btn btn-primary mt-4">Update</button>
+                              </span> 
+                          </div>
+                          </div>
+                      </div>
+                    </form>
+                      
+                    </div>
+                    <!-- 6th end --> 
+                    
+                    <!-- 7th Contact Information
+                    ============================================= -->
+                
+                    <div>
+                    <h2 class="text-6 mb-2">Contact Information</h2>
+                        <div class="tabbable boxed parentTabs">
+                        <ul class="nav nav-tabs">
+                            <li><a href="#correspondenceAddr" class="nav-link active">Correspondence Address</a></li>
+                            <li><a href="#permanentAddr" class="nav-link">Permanent Address</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active in" id="correspondenceAddr">
+                                <form [formGroup]="CrspAddrForm" (ngSubmit)="addAddress('Correspondence')">
+                                    <div class="table-inner pb-2">
+                                        <div class="row flex-row">
+                                            <div class="col-12 col-md-4" style="margin-bottom: 0%;padding-bottom: 0%;"> 
+                                                <span class="text-3 text-dark operator-name">Correspondence Address 1</span> 
+                                                <span class="text-1 text-muted d-block">
+                                                    <textarea class="form-control" formControlName="address1" required  id="address1" placeholder="You have to enter max 60 Characters." id="exampleFormControlTextarea1" rows="2"></textarea>
+                                                </span> 
+                                            </div>
+                                            <div class="col-12 col-md-4" style="margin-bottom: 0%;padding-bottom: 0%;"> 
+                                                <span class="text-3 text-dark operator-name">Correspondence Address 2</span> 
+                                                <span class="text-1 text-muted d-block">
+                                                    <textarea class="form-control"  formControlName="address2" required  placeholder="You have to enter max 60 Characters." id="exampleFormControlTextarea1" rows="2"></textarea>
+                                                </span> 
+                                            </div>
+                                            <div class="col-12 col-md-4" style="margin-bottom: 0%;padding-bottom: 0%;"> 
+                                                <span class="text-3 text-dark operator-name">PIN Code</span> 
+                                                <span class="text-1 text-muted d-block">
+                                                    <input type="text" class="form-control" formControlName="pincode" required aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                                </span> 
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="row flex-row">
+                                            <div class="col-12 col-md-4" style="margin-top: 0%; padding-top: 0%;"> 
+                                                <div *ngIf="c['address1'].touched && c['address1'].invalid" class="alert alert-danger">
+                                                    <div *ngIf="c['address1'].errors && c['address1'].errors['required']">This field is required.</div> 
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-4" style="margin-top: 0%; padding-top: 0%;"> 
+                                                <div *ngIf="c['address2'].touched && c['address2'].invalid" class="alert alert-danger">
+                                                    <div *ngIf="c['address2'].errors && c['address2'].errors['required']">This field is required.</div> 
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-4" style="margin-top: 0%; padding-top: 0%;"> 
+                                                <div *ngIf="c['pincode'].touched && c['pincode'].invalid" class="alert alert-danger">
+                                                    <div *ngIf="c['pincode'].errors && c['pincode'].errors['required']">This field is required.</div> 
+                                                </div>
+                                            </div>                                            
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="table-inner pb-2">
+                                        <div class="row flex-row">
+                                            <div class="col-12 col-md-4"> 
+                                                <span class="text-3 text-dark operator-name">City</span> 
+                                                <span class="text-1 text-muted d-block">
+                                                    <select class="custom-select" id="title"  formControlName="city" required >
+                                                            <option value="">Select City</option>
+                                                            <option value="Mumbai">Mumbai</option>
+                                                            <option value="Delhi">Delhi</option>
+                                                            <option value="Kolkata">Kolkata</option>
+                                                            <option value="Hyderabad">Hyderabad</option>
+                                                            <option value="Chennai">Chennai</option>
+                                                    </select>
+                                                </span> 
+                                            </div>
+
+                                            <div class="col-12 col-md-4"> 
+                                                <span class="text-3 text-dark operator-name">State</span> 
+                                                <span class="text-1 text-muted d-block">
+                                                    <div class="input-group input-group-sm">
+                                                        <select class="custom-select" id="title" required formControlName="state">
+                                                            <option value="">Select State</option>
+                                                            <option *ngFor="let x of states" value="{{x.id}}">{{x.state_name}}</option>									
+                                                        </select>
+                                                    </div>
+                                                </span> 
+                                            </div>
+                                            <div class="col-12 col-md-4"> 
+                                                <span class="text-3 text-dark operator-name">Country</span> 
+                                                <span class="text-1 text-muted d-block">
+                                                    <select class="custom-select" id="title" formControlName="country" required  required="">
+                                                            <option value="">Select Country</option>
+                                                            <option value="India">India</option>
+                                                    </select>
+                                                </span> 
+                                            </div>
+                                        </div>
+                                        <div class="row flex-row">
+                                            <div class="col-12 col-md-4" style="margin-top: 0%; padding-top: 0%;"> 
+                                                <div *ngIf="c['city'].touched && c['city'].invalid" class="alert alert-danger">
+                                                    <div *ngIf="c['city'].errors && c['city'].errors['required']">This field is required.</div> 
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-4" style="margin-top: 0%; padding-top: 0%;"> 
+                                                <div *ngIf="c['state'].touched && c['state'].invalid" class="alert alert-danger">
+                                                    <div *ngIf="c['state'].errors && c['state'].errors['required']">This field is required.</div> 
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-4" style="margin-top: 0%; padding-top: 0%;"> 
+                                                <div *ngIf="c['country'].touched && c['country'].invalid" class="alert alert-danger">
+                                                    <div *ngIf="c['country'].errors && c['country'].errors['required']">This field is required.</div> 
+                                                </div>
+                                            </div>                                            
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="table-inner pb-2">
+                                        <div class="row flex-row">
+                                            <div class="col-12 col-md-4"> 
+                                                <span class="text-3 text-dark operator-name">Phone</span> 
+                                                <span class="text-1 text-muted d-block">
+                                                    <input type="number" class="form-control"  formControlName="phone_number" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                                </span> 
+                                            </div>
+                                            <div class="col-12 col-md-4"> 
+                                                <span class="text-3 text-dark operator-name">CC Emails</span> 
+                                                <span class="text-1 text-muted d-block">
+                                                    <input type="text" class="form-control"  formControlName="user_email"  aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                                </span> 
+                                            </div>
+                                            <!-- <div class="col-12 col-md-4"> 
+                                                <span class="text-3 text-dark operator-name">Use Only CC Email For Notification</span> 
+                                                <span class="text-1 text-muted d-block">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input id="save-card1" name="savecard1" class="custom-control-input" type="checkbox">
+                                                        <label class="custom-control-label" for="save-card1"></label>
+                                                    </div>
+                                                </span> 
+                                            </div> -->
+                                        </div>
+                                        <div class="row flex-row">
+                                            <div class="col-12 col-md-4" style="margin-top: 0%; padding-top: 0%;"> 
+                                                <div *ngIf="c['phone_number'].touched && c['phone_number'].invalid" class="alert alert-danger">
+                                                    <div *ngIf="c['phone_number'].errors && c['phone_number'].errors['required']">This field is required.</div> 			  
+                                                    <div *ngIf="c['phone_number'].errors && c['phone_number'].errors['minlength']">Phone Number should be 10 character.</div>
+                                                    <div *ngIf="c['phone_number'].errors && c['phone_number'].errors['maxlength']">Phone Number should only be 10 character.</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-4" style="margin-top: 0%; padding-top: 0%;"> 
+                                                <div *ngIf="c['user_email'].touched && c['user_email'].invalid" class="alert alert-danger">
+                                                    <div *ngIf="c['user_email'].errors && c['user_email'].errors['required']">Email is required.</div>
+                                                    <div *ngIf="c['user_email'].errors && c['user_email'].errors['email']">Please, enter valid email address.</div>
+                                                </div>
+                                            </div>                                           
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="table-inner pb-2">
+                                        <div class="row align-items-sm-center flex-row">
+                                            <div class="col-12 col-md-4"> 
+                                                <span class="text-3 text-dark operator-name">
+                                                    <button type="submit" class="btn btn-primary">Update</button>
+                                                </span> 
+                                            </div>
+                                        </div>
+                                    </div>  
+                                </form>                                                          
+                            </div>
+                            <div class="tab-pane" id="permanentAddr">
+
+                                <form [formGroup]="PrmtAddrForm" (ngSubmit)="addAddress('Permanent')">
+                                    <div class="table-inner pb-2">
+                                        <div class="row flex-row">
+                                            <div class="col-12 col-md-4"> 
+                                                <span class="text-3 text-dark operator-name">Permanent Address 1</span> 
+                                                <span class="text-1 text-muted d-block">
+                                                    <textarea class="form-control" formControlName="address1" required  id="address1" placeholder="You have to enter max 60 Characters." id="exampleFormControlTextarea1" rows="2"></textarea>
+                                                </span> 
+                                            </div>
+                                            <div class="col-12 col-md-4"> 
+                                                <span class="text-3 text-dark operator-name">Permanent Address 2</span> 
+                                                <span class="text-1 text-muted d-block">
+                                                    <textarea class="form-control"  formControlName="address2" required  placeholder="You have to enter max 60 Characters." id="exampleFormControlTextarea1" rows="2"></textarea>
+                                                </span> 
+                                            </div>
+                                            <div class="col-12 col-md-4"> 
+                                                <span class="text-3 text-dark operator-name">PIN Code</span> 
+                                                <span class="text-1 text-muted d-block">
+                                                    <input type="text" class="form-control" formControlName="pincode" required aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                                </span> 
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="row flex-row">
+                                            <div class="col-12 col-md-4" style="margin-top: 0%; padding-top: 0%;"> 
+                                                <div *ngIf="prm['address1'].touched && prm['address1'].invalid" class="alert alert-danger">
+                                                    <div *ngIf="prm['address1'].errors && prm['address1'].errors['required']">This field is required.</div> 
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-4" style="margin-top: 0%; padding-top: 0%;"> 
+                                                <div *ngIf="prm['address2'].touched && prm['address2'].invalid" class="alert alert-danger">
+                                                    <div *ngIf="prm['address2'].errors && prm['address2'].errors['required']">This field is required.</div> 
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-4" style="margin-top: 0%; padding-top: 0%;"> 
+                                                <div *ngIf="prm['pincode'].touched && prm['pincode'].invalid" class="alert alert-danger">
+                                                    <div *ngIf="prm['pincode'].errors && prm['pincode'].errors['required']">This field is required.</div> 
+                                                </div>
+                                            </div>                                            
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="table-inner pb-2">
+                                        <div class="row flex-row">
+                                            <div class="col-12 col-md-4"> 
+                                                <span class="text-3 text-dark operator-name">City</span> 
+                                                <span class="text-1 text-muted d-block">
+                                                    <select class="custom-select" id="title"  formControlName="city" required >
+                                                            <option value="">Select City</option>
+                                                            <option value="Mumbai">Mumbai</option>
+                                                            <option value="Delhi">Delhi</option>
+                                                    </select>
+                                                </span> 
+                                            </div>
+
+                                            
+                                            <div class="col-12 col-md-4"> 
+                                                <span class="text-3 text-dark operator-name">State</span> 
+                                                <span class="text-1 text-muted d-block">
+                                                    <div class="input-group input-group-sm">
+                                                        <select class="custom-select" id="title" required formControlName="state">
+                                                            <option value="">Select State</option>
+                                                            <option *ngFor="let x of states" value="{{x.id}}">{{x.state_name}}</option>									
+                                                        </select>
+                                                    </div>
+                                                </span> 
+                                            </div>
+                                            <div class="col-12 col-md-4"> 
+                                                <span class="text-3 text-dark operator-name">Country</span> 
+                                                <span class="text-1 text-muted d-block">
+                                                    <select class="custom-select" id="title" formControlName="country" required  required="">
+                                                            <option value="">Select Country</option>
+                                                            <option value="India">India</option>
+                                                    </select>
+                                                </span> 
+                                            </div>
+                                        </div>
+                                        <div class="row flex-row">
+                                            <div class="col-12 col-md-4" style="margin-top: 0%; padding-top: 0%;"> 
+                                                <div *ngIf="prm['city'].touched && prm['city'].invalid" class="alert alert-danger">
+                                                    <div *ngIf="prm['city'].errors && prm['city'].errors['required']">This field is required.</div> 
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-4" style="margin-top: 0%; padding-top: 0%;"> 
+                                                <div *ngIf="prm['state'].touched && prm['state'].invalid" class="alert alert-danger">
+                                                    <div *ngIf="prm['state'].errors && prm['state'].errors['required']">This field is required.</div> 
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-4" style="margin-top: 0%; padding-top: 0%;"> 
+                                                <div *ngIf="prm['country'].touched && prm['country'].invalid" class="alert alert-danger">
+                                                    <div *ngIf="prm['country'].errors && prm['country'].errors['required']">This field is required.</div> 
+                                                </div>
+                                            </div>                                            
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="table-inner pb-2">
+                                        <div class="row flex-row">
+                                            <div class="col-12 col-md-4"> 
+                                                <span class="text-3 text-dark operator-name">Phone</span> 
+                                                <span class="text-1 text-muted d-block">
+                                                    <input type="number" class="form-control"  formControlName="phone_number" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                                </span> 
+                                            </div>
+                                            <div class="col-12 col-md-4"> 
+                                                <span class="text-3 text-dark operator-name">CC Emails</span> 
+                                                <span class="text-1 text-muted d-block">
+                                                    <input type="text" class="form-control"  formControlName="user_email"  aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                                </span> 
+                                            </div>
+                                            <!-- <div class="col-12 col-md-4"> 
+                                                <span class="text-3 text-dark operator-name">Use Only CC Email For Notification</span> 
+                                                <span class="text-1 text-muted d-block">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input id="save-card1" name="savecard1" class="custom-control-input" type="checkbox">
+                                                        <label class="custom-control-label" for="save-card1"></label>
+                                                    </div>
+                                                </span> 
+                                            </div> -->
+                                        </div>
+                                        <div class="row flex-row">
+                                            <div class="col-12 col-md-4" style="margin-top: 0%; padding-top: 0%;"> 
+                                                <div *ngIf="prm['phone_number'].touched && prm['phone_number'].invalid" class="alert alert-danger">
+                                                    <div *ngIf="prm['phone_number'].errors && prm['phone_number'].errors['required']">This field is required.</div> 			  
+                                                    <div *ngIf="prm['phone_number'].errors && prm['phone_number'].errors['minlength']">Phone Number should be 10 character.</div>
+                                                    <div *ngIf="prm['phone_number'].errors && prm['phone_number'].errors['maxlength']">Phone Number should only be 10 character.</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-4" style="margin-top: 0%; padding-top: 0%;"> 
+                                                <div *ngIf="prm['user_email'].touched && prm['user_email'].invalid" class="alert alert-danger">
+                                                    <div *ngIf="prm['user_email'].errors && prm['user_email'].errors['required']">Email is required.</div>
+                                                    <div *ngIf="prm['user_email'].errors && prm['user_email'].errors['email']">Please, enter valid email address.</div>
+                                                </div>
+                                            </div>                                           
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="table-inner pb-2">
+                                        <div class="row align-items-sm-center flex-row">
+                                            <div class="col-12 col-md-4"> 
+                                                <span class="text-3 text-dark operator-name">
+                                                    <button type="submit" class="btn btn-primary">Update</button>
+                                                </span> 
+                                            </div>
+                                        </div>
+                                    </div>  
+                                </form> 
+
+                            <!-- <div class="table-inner pb-2">
+                                <div class="row flex-row">
+                                    <div class="col-12 col-md-8"> 
+                                        <span class="text-3 text-dark operator-name">Street</span> 
+                                        <span class="text-1 text-muted d-block">
+                                            <textarea class="form-control" placeholder="You have to enter max 60 Characters." id="exampleFormControlTextarea1" rows="2"></textarea>
+                                        </span> 
+                                    </div>
+                                    <div class="col-12 col-md-4"> 
+                                        <span class="text-3 text-dark operator-name">City</span> 
+                                        <span class="text-1 text-muted d-block">
+                                            <select class="custom-select" id="title" required="">
+                                                    <option value="">Select One</option>
+                                                    <option>China</option>
+                                            </select>
+                                        </span> 
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="table-inner pb-2">
+                                <div class="row flex-row">
+                                    <div class="col-12 col-md-4"> 
+                                        <span class="text-3 text-dark operator-name">State</span> 
+                                        <span class="text-1 text-muted d-block">
+                                            <input type="text" class="form-control" placeholder="You have to enter max 2 Characters" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                        </span> 
+                                    </div>
+                                    <div class="col-12 col-md-4"> 
+                                        <span class="text-3 text-dark operator-name">Pin Code</span> 
+                                        <span class="text-1 text-muted d-block">
+                                            <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                        </span> 
+                                    </div>
+                                    <div class="col-12 col-md-4"> 
+                                        <span class="text-3 text-dark operator-name">Country</span> 
+                                        <span class="text-1 text-muted d-block">
+                                            <select class="custom-select" id="title" required="">
+                                                    <option value="">India</option>
+                                                    <option>China</option>
+                                            </select>
+                                        </span> 
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="table-inner pb-2">
+                                <div class="row flex-row">
+                                    <div class="col-12 col-md-4"> 
+                                        <span class="text-3 text-dark operator-name">Phone</span> 
+                                        <span class="text-1 text-muted d-block">
+                                            <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                        </span> 
+                                    </div>
+                                    <div class="col-12 col-md-4"> 
+                                        <span class="text-3 text-dark operator-name">CC Emails</span> 
+                                        <span class="text-1 text-muted d-block">
+                                            <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                        </span> 
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                            <div class="table-inner pb-2">
+                                <div class="row align-items-sm-center flex-row">
+                                    <div class="col-12 col-md-4"> 
+                                        <span class="text-3 text-dark operator-name">
+                                            <button type="button" class="btn btn-primary">Update</button>
+                                        </span> 
+                                    </div>
+                                </div>
+                            </div> -->
+                            </div>
+                            
+                        </div>
+                    </div>
+                    </div>
+                      
+                    <!-- 7th end --> 
+                    
+                    <!-- 8th Document Information
+                    ============================================= -->
+                    <div>
+                      <h2 class="text-6 mb-2">Document Information</h2>
+                        <div class="tabbable boxed parentTabs">
+                        <ul class="nav nav-tabs">
+                            <li><a href="#set1" class="nav-link active">Passport Details</a></li>
+                            <li><a href="#set2" class="nav-link">VISA Details</a></li>
+                            <li><a href="#set3" class="nav-link">Insurance Details</a></li>
+                            <li><a href="#set4" class="nav-link">Other Document Details</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active in" id="set1">
+                                <form [formGroup]="passportForm">
+                                    <div class="table-inner pb-2">
+                                        <div class="row align-items-sm-center flex-row">
+                                        <div class="col-12 col-md-2"> 
+                                            <span class="text-3 text-dark operator-name">Issuing Country</span> 
+                                            <span class="text-1 text-muted d-block">
+                                            <input type="text" class="form-control" required formControlName="issuing_country" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                            </span> 
+                                        </div>
+                                        <div class="col-12 col-md-2"> 
+                                            <span class="text-3 text-dark operator-name">Passport Number</span> 
+                                            <span class="text-1 text-muted d-block">
+                                            <input type="text" class="form-control" required formControlName="passport_number" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></span> 
+                                        </div>						
+                                        <div class="col-12 col-md-2"> 
+                                            <span class="text-3 text-dark operator-name">Birth Date</span> 
+                                            <span class="text-1 text-muted d-block">
+                                            <input type="text" class="form-control" required placeholder="YYYY-MM-DD" formControlName="birth_date" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                            </span> 
+                                        </div>
+                                        
+                                        <div class="col-12 col-md-2"> 
+                                            <span class="text-3 text-dark operator-name">Issue Date</span> 
+                                            <span class="text-1 text-muted d-block">
+                                            <input type="text" class="form-control" required placeholder="YYYY-MM-DD" formControlName="issue_date" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                            </span> 
+                                        </div>
+                                        
+                                        <div class="col-12 col-md-2"> 
+                                            <span class="text-3 text-dark operator-name">Expiry Date</span> 
+                                            <span class="text-1 text-muted d-block">
+                                            <input type="text" class="form-control" required placeholder="YYYY-MM-DD" formControlName="expiry_date" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                            </span> 
+                                        </div>
+                                        
+                                        <div class="col-12 col-md-2"> 
+                                            <span class="text-3 text-dark operator-name">Issuance Place</span> 
+                                            <span class="text-1 text-muted d-block">
+                                            <input type="text" class="form-control" required formControlName="issuance_Place" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                            </span> 
+                                        </div>
+                                        <div class="col-12 col-md-2">
+                                            <div *ngIf="p['issuing_country'].touched && p['issuing_country'].invalid" class="alert alert-danger">
+                                                <div *ngIf="p['issuing_country'].errors && p['issuing_country'].errors['required']">This field is required.</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-2">
+                                            <div *ngIf="p['passport_number'].touched && p['passport_number'].invalid" class="alert alert-danger">
+                                                <div *ngIf="p['passport_number'].errors && p['passport_number'].errors['required']">This field is required.</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-2">
+                                            <div *ngIf="p['birth_date'].touched && p['birth_date'].invalid" class="alert alert-danger">
+                                                <div *ngIf="p['birth_date'].errors && p['birth_date'].errors['required']">This field is required.</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-2">
+                                            <div *ngIf="p['issue_date'].touched && p['issue_date'].invalid" class="alert alert-danger">
+                                                <div *ngIf="p['issue_date'].errors && p['issue_date'].errors['required']">This field is required.</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-2">
+                                            <div *ngIf="p['expiry_date'].touched && p['expiry_date'].invalid" class="alert alert-danger">
+                                                <div *ngIf="p['expiry_date'].errors && p['expiry_date'].errors['required']">This field is required.</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-2">
+                                            <div *ngIf="p['issuance_Place'].touched && p['issuance_Place'].invalid" class="alert alert-danger">
+                                                <div *ngIf="p['issuance_Place'].errors && p['issuance_Place'].errors['required']">This field is required.</div>
+                                            </div>
+                                        </div>
+                                        
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="table-inner pb-2">
+                                        <div class="row align-items-sm-center flex-row">
+                                        <div class="col-12 col-md-2"> 
+                                            <span class="text-3 text-dark operator-name">Scan Copy</span> 
+                                            <span class="text-1 text-muted d-block">
+                                            <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                            </span> 
+                                        </div>
+                                        
+                                        <div class="col-12 col-md-3"> 
+                                            <span class="text-3 text-dark operator-name"></span> 
+                                            <span class="text-1 text-muted d-block">
+                                                <button type="submit" *ngIf="!passport_exists" (click)="updatePassportDetails('Add')" class="btn btn-primary">Add Passport</button>
+                                                <button type="submit" *ngIf="passport_exists" (click)="updatePassportDetails('Update')" class="btn btn-primary">Update Passport</button>
+                                            </span> 
+                                        </div>
+                                        
+                                        
+                                        </div>
+                                    </div>
+                                </form>
+                                
+                            </div>
+                            <div class="tab-pane" id="set2">
+                            <form [formGroup]="visaForm">
+                                <div class="table-inner pb-2">
+                                    <div class="row align-items-sm-center flex-row">
+                                    <div class="col-12 col-md-2"> 
+                                        <span class="text-3 text-dark operator-name">Visa Number</span> 
+                                        <span class="text-1 text-muted d-block">
+                                            <input type="text" class="form-control" aria-label="Small"  formControlName="visa_number" aria-describedby="inputGroup-sizing-sm">
+                                        </span> 
+                                    </div>
+                                    <div class="col-12 col-md-2"> 
+                                        <span class="text-3 text-dark operator-name">Issuing Country</span> 
+                                        <span class="text-1 text-muted d-block">
+                                            <input type="text" class="form-control" formControlName="issuing_country" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></span> 
+                                    </div>						
+                                    <div class="col-12 col-md-2"> 
+                                        <span class="text-3 text-dark operator-name">Type of VISA</span> 
+                                        <span class="text-1 text-muted d-block">
+                                        <input type="text" class="form-control"  formControlName="type_of_visa" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                        </span> 
+                                    </div>
+                                    
+                                    <div class="col-12 col-md-2"> 
+                                        <span class="text-3 text-dark operator-name">Date Of Issue</span> 
+                                        <span class="text-1 text-muted d-block">
+                                        <input type="text" class="form-control" formControlName="issue_date" placeholder="YYYY-MM-DD" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                        </span> 
+                                    </div>
+                                    
+                                    <div class="col-12 col-md-2"> 
+                                        <span class="text-3 text-dark operator-name">Date of Expiry</span> 
+                                        <span class="text-1 text-muted d-block">
+                                        <input type="text" class="form-control" formControlName="expiry_date" placeholder="YYYY-MM-DD" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                        </span> 
+                                    </div>
+                                    
+                                    <div class="col-12 col-md-2"> 
+                                        <span class="text-3 text-dark operator-name">Linked Passport</span> 
+                                        <span class="text-1 text-muted d-block">
+                                        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                        </span> 
+                                    </div>
+
+                                    <div class="col-12 col-md-2">
+                                        <div *ngIf="v['visa_number'].touched && v['visa_number'].invalid" class="alert alert-danger">
+                                            <div *ngIf="v['visa_number'].errors && v['visa_number'].errors['required']">This field is required.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-2">
+                                        <div *ngIf="v['issuing_country'].touched && v['issuing_country'].invalid" class="alert alert-danger">
+                                            <div *ngIf="v['issuing_country'].errors && v['issuing_country'].errors['required']">This field is required.</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-12 col-md-2">
+                                        <div *ngIf="v['type_of_visa'].touched && v['type_of_visa'].invalid" class="alert alert-danger">
+                                            <div *ngIf="v['type_of_visa'].errors && v['type_of_visa'].errors['required']">This field is required.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-2">
+                                        <div *ngIf="v['issue_date'].touched && v['issue_date'].invalid" class="alert alert-danger">
+                                            <div *ngIf="v['issue_date'].errors && v['issue_date'].errors['required']">This field is required.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-2">
+                                        <div *ngIf="v['expiry_date'].touched && v['expiry_date'].invalid" class="alert alert-danger">
+                                            <div *ngIf="v['expiry_date'].errors && v['expiry_date'].errors['required']">This field is required.</div>
+                                        </div>
+                                    </div>
+                                    
+                                    </div>
+                                </div>
+                                
+                                <div class="table-inner pb-2">
+                                    <div class="row align-items-sm-center flex-row">
+                                    <div class="col-12 col-md-2"> 
+                                        <span class="text-3 text-dark operator-name">Scan Copy</span> 
+                                        <span class="text-1 text-muted d-block">
+                                        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                        </span> 
+                                    </div>
+                                    <div class="col-12 col-md-3"> 
+                                        <span class="text-3 text-dark operator-name"></span> 
+                                        <span class="text-1 text-muted d-block">
+                                            <button type="submit"  *ngIf="!visa_exists" (click)="updateVisaDetails('Add')" class="btn btn-primary">Add Visa</button>
+                                            <button type="submit"  *ngIf="visa_exists" (click)="updateVisaDetails('Update')" class="btn btn-primary">Update Visa</button>
+                                        </span> 
+                                    </div>
+                                    
+                                    
+                                    </div>
+                                </div>
+                            </form>
+                            </div>
+                            <div class="tab-pane" id="set3">
+                                <form [formGroup]="insuranceForm">
+                                    <div class="table-inner pb-2">
+                                        <div class="row align-items-sm-center flex-row">
+                                        <div class="col-12 col-md-2"> 
+                                            <span class="text-3 text-dark operator-name">Insurer</span> 
+                                            <span class="text-1 text-muted d-block">
+                                                <input type="text" class="form-control" formControlName="insurer" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                            </span> 
+                                        </div>
+                                        <div class="col-12 col-md-2"> 
+                                            <span class="text-3 text-dark operator-name">Region</span> 
+                                            <span class="text-1 text-muted d-block">
+                                                <input type="text" class="form-control" formControlName="region" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></span> 
+                                        </div>						
+                                        <div class="col-12 col-md-2"> 
+                                            <span class="text-3 text-dark operator-name">Policy No</span> 
+                                            <span class="text-1 text-muted d-block">
+                                            <input type="text" class="form-control" formControlName="policy_no" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                            </span> 
+                                        </div>
+                                        
+                                        <div class="col-12 col-md-2"> 
+                                            <span class="text-3 text-dark operator-name">* Start Date</span> 
+                                            <span class="text-1 text-muted d-block">
+                                            <input type="text" class="form-control" formControlName="start_date" aria-label="Small" placeholder="YYYY-MM-DD" aria-describedby="inputGroup-sizing-sm">
+                                            </span> 
+                                        </div>
+                                        
+                                        <div class="col-12 col-md-2"> 
+                                            <span class="text-3 text-dark operator-name">* End Date</span> 
+                                            <span class="text-1 text-muted d-block">
+                                            <input type="text" class="form-control" formControlName="end_date" aria-label="Small" placeholder="YYYY-MM-DD" aria-describedby="inputGroup-sizing-sm">
+                                            </span> 
+                                        </div>
+                                        
+                                        <div class="col-12 col-md-2"> 
+                                            <span class="text-3 text-dark operator-name">Nominee</span> 
+                                            <span class="text-1 text-muted d-block">
+                                            <input type="text" class="form-control" formControlName="nominee" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                            </span> 
+                                        </div>
+
+                                        <div class="col-12 col-md-2">
+                                            <div *ngIf="i['insurer'].touched && i['insurer'].invalid" class="alert alert-danger">
+                                                <div *ngIf="i['insurer'].errors && i['insurer'].errors['required']">This field is required.</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-md-2">
+                                            <div *ngIf="i['region'].touched && i['region'].invalid" class="alert alert-danger">
+                                                <div *ngIf="i['region'].errors && i['region'].errors['required']">This field is required.</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-md-2">
+                                            <div *ngIf="i['policy_no'].touched && i['policy_no'].invalid" class="alert alert-danger">
+                                                <div *ngIf="i['policy_no'].errors && i['policy_no'].errors['required']">This field is required.</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-md-2">
+                                            <div *ngIf="i['start_date'].touched && i['start_date'].invalid" class="alert alert-danger">
+                                                <div *ngIf="i['start_date'].errors && i['start_date'].errors['required']">This field is required.</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-md-2">
+                                            <div *ngIf="i['end_date'].touched && i['end_date'].invalid" class="alert alert-danger">
+                                                <div *ngIf="i['end_date'].errors && i['end_date'].errors['required']">This field is required.</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-md-2">
+                                            <div *ngIf="i['nominee'].touched && i['nominee'].invalid" class="alert alert-danger">
+                                                <div *ngIf="i['nominee'].errors && i['nominee'].errors['required']">This field is required.</div>
+                                            </div>
+                                        </div>                                       
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="table-inner pb-2 pt-2">
+                                        <div class="row align-items-sm-center flex-row">
+                                            <div class="col-12 col-md-4"> 
+                                                <span class="text-1 text-muted d-block">
+                                                    <button type="submit"  *ngIf="!insurance_exists" (click)="updateInsuranceDetails('Add')" class="btn btn-primary">Add Insurance</button>
+                                                    <button type="submit"  *ngIf="insurance_exists" (click)="updateInsuranceDetails('Update')" class="btn btn-primary">Update Insurance</button>
+                                                </span> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>       
+                            </div>
+                            <div class="tab-pane" id="set4">
+                                <div class="table-inner pb-2">
+                                    <div class="row align-items-sm-center flex-row">
+                                    <div class="col-12 col-md-2"> 
+                                        <span class="text-3 text-dark operator-name">Document Type</span> 
+                                        <span class="text-1 text-muted d-block">
+                                        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                        </span> 
+                                    </div>
+                                    <div class="col-12 col-md-2"> 
+                                        <span class="text-3 text-dark operator-name">Document Number</span> 
+                                        <span class="text-1 text-muted d-block"><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></span> 
+                                    </div>						
+                                    <div class="col-12 col-md-2"> 
+                                        <span class="text-3 text-dark operator-name">Issuing Country</span> 
+                                        <span class="text-1 text-muted d-block">
+                                        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                        </span> 
+                                    </div>
+                                    
+                                    <div class="col-12 col-md-2"> 
+                                        <span class="text-3 text-dark operator-name">Date Of Issue</span> 
+                                        <span class="text-1 text-muted d-block">
+                                        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                        </span> 
+                                    </div>
+                                    
+                                    <div class="col-12 col-md-2"> 
+                                        <span class="text-3 text-dark operator-name">Date Of Expiry</span> 
+                                        <span class="text-1 text-muted d-block">
+                                        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                        </span> 
+                                    </div>
+                                    
+                                    <div class="col-12 col-md-2"> 
+                                        <span class="text-3 text-dark operator-name">Date Of Birth</span> 
+                                        <span class="text-1 text-muted d-block">
+                                        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                        </span> 
+                                    </div>
+                                    
+                                    </div>
+                                </div>
+                                
+                                <div class="table-inner pb-2">
+                                    <div class="row align-items-sm-center flex-row">
+                                    <div class="col-12 col-md-2"> 
+                                        <span class="text-3 text-dark operator-name">Issuing Place</span> 
+                                        <span class="text-1 text-muted d-block">
+                                        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                        </span> 
+                                    </div>
+                                    <div class="col-12 col-md-2"> 
+                                        <span class="text-3 text-dark operator-name">Scan Copy</span> 
+                                        <span class="text-1 text-muted d-block"><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></span> 
+                                    </div>
+                                    
+                                    <div class="col-12 col-md-2"> 
+                                        <span class="text-3 text-dark operator-name">Action</span> 
+                                        <span class="text-1 text-muted d-block"><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></span> 
+                                    </div>
+                                    
+                                    <div class="col-12 col-md-3"> 
+                                        <span class="text-3 text-dark operator-name">Action</span> 
+                                        <span class="text-1 text-muted d-block"><button type="button" class="btn btn-primary">Add Other Document</button></span> 
+                                    </div>
+                                    
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    </div>
+                    <!-- 8th end --> 
+                    
+                    <!-- 9th Preferences
+                    ============================================= -->
+                    <div>
+                    <h2 class="text-6 mb-2">Preferences</h2>
+                      <div class="table-inner pb-2">
+                          <div class="row align-items-sm-center flex-row">
+                          <div class="col-12 col-md-3"> 
+                              <span class="text-3 text-dark operator-name">Domestic Meal</span> 
+                              <span class="text-1 text-muted d-block">
+                                  <select class="custom-select" id="title" required="">
+                                      <option value="">Select</option>
+                                      <option>Disabled</option>
+                                  </select>
+                              </span> 
+                          </div>
+                          <div class="col-12 col-md-3"> 
+                              <span class="text-3 text-dark operator-name">Meal Comment</span> 
+                              <span class="text-1 text-muted d-block"><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></span> 
+                          </div>					
+                          <div class="col-12 col-md-3"> 
+                              <span class="text-3 text-dark operator-name">Domestic Seat</span> 
+                              <span class="text-1 text-muted d-block">
+                                  <select class="custom-select" id="title" required="">
+                                      <option value="">Select</option>
+                                      <option>Disabled</option>
+                                  </select>
+                              </span>  
+                          </div>
+                          
+                          <div class="col-12 col-md-3"> 
+                              <span class="text-3 text-dark operator-name">Domestic Request</span> 
+                              <span class="text-1 text-muted d-block">
+                                  <select class="custom-select" id="title" required="">
+                                      <option value="">Select</option>
+                                      <option>Disabled</option>
+                                  </select>
+                              </span>  
+                          </div>
+                          
+                          </div>
+                      </div>
+                      <div class="table-inner pb-2">
+                          <div class="row align-items-sm-center flex-row">
+                          <div class="col-12 col-md-3"> 
+                              <span class="text-3 text-dark operator-name">InterNational Meal</span> 
+                              <span class="text-1 text-muted d-block">
+                                  <select class="custom-select" id="title" required="">
+                                      <option value="">Select</option>
+                                      <option>Disabled</option>
+                                  </select>
+                              </span> 
+                          </div>
+                          <div class="col-12 col-md-3"> 
+                              <span class="text-3 text-dark operator-name">Meal Comment</span> 
+                              <span class="text-1 text-muted d-block"><input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></span> 
+                          </div>
+                          
+                          <div class="col-12 col-md-3"> 
+                              <span class="text-3 text-dark operator-name">InterNational Seat</span> 
+                              <span class="text-1 text-muted d-block">
+                                  <select class="custom-select" id="title" required="">
+                                      <option value="">Select</option>
+                                      <option>Disabled</option>
+                                  </select>
+                              </span>  
+                          </div>
+                          
+                          <div class="col-12 col-md-3"> 
+                              <span class="text-3 text-dark operator-name">InterNational Request</span> 
+                              <span class="text-1 text-muted d-block">
+                                  <select class="custom-select" id="title" required="">
+                                      <option value="">Select</option>
+                                      <option>Disabled</option>
+                                  </select>
+                              </span>  
+                          </div>
+                          </div>
+                      </div>
+                      
+                      <div class="table-inner pb-2">
+                          <div class="row align-items-sm-center flex-row">
+                              <div class="col-12 col-md-4"> 
+                                  <span class="text-3 text-dark operator-name">
+                                      <button type="button" class="btn btn-primary">Updater</button>
+                                  </span> 
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                    <!-- 9th end --> 
+                    
+                    <!-- 10th Air Custom Config
+                    ============================================= -->
+                      <div>
+                      <h2 class="text-6 mb-2">Air Custom Config</h2>
+                      <div class="table-responsive font-n gst-infomation">
+                            <table class="table table-success table-striped shadow-md">
+                            <thead class="table-dark">
+                            <tr>
+                                <th scope="col" width="30%">Program</th>
+                                <th scope="col">Membership</th>
+                                <th scope="col">Is Preferred?</th>
+                                <th scope="col">Edit</th>
+                                <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">AI</th>
+                                <td>183348016</td>
+                                <td>
+                                <div class="custom-control custom-checkbox">
+                                    <input id="save-card1" name="savecard1" class="custom-control-input" type="checkbox">
+                                    <label class="custom-control-label" for="save-card1"></label>
+                                </div>
+                                </td>
+                                <td>
+                                <button class="btn btn-primary btn-sm4 rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Enable"><i class="fa fa-table"></i></button></td>
+                                <td><button class="btn btn-danger btn-sm4 rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="fa fa-trash"></i></button></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">KL</th>
+                                <td>1175841305</td>
+                                <td>
+                                <div class="custom-control custom-checkbox">
+                                    <input id="save-card1" name="savecard1" class="custom-control-input" type="checkbox">
+                                    <label class="custom-control-label" for="save-card1"></label>
+                                </div>
+                                </td>
+                                <td><button class="btn btn-primary btn-sm4 rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Enable"><i class="fa fa-table"></i></button></td>
+                                <td><button class="btn btn-danger btn-sm4 rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="fa fa-trash"></i></button></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">AF</th>
+                                <td>1175841305</td>
+                                <td>
+                                <div class="custom-control custom-checkbox">
+                                    <input id="save-card1" name="savecard1" class="custom-control-input" type="checkbox">
+                                    <label class="custom-control-label" for="save-card1"></label>
+                                </div>
+                                </td>
+                                <td><button class="btn btn-primary btn-sm4 rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Enable"><i class="fa fa-table"></i></button></td>
+                                <td><button class="btn btn-danger btn-sm4 rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="fa fa-trash"></i></button></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">DL</th>
+                                <td>1175841305</td>
+                                <td>
+                                <div class="custom-control custom-checkbox">
+                                    <input id="save-card1" name="savecard1" class="custom-control-input" type="checkbox">
+                                    <label class="custom-control-label" for="save-card1"></label>
+                                </div>
+                                </td>
+                                <td><button class="btn btn-primary btn-sm4 rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Enable"><i class="fa fa-table"></i></button></td>
+                                <td><button class="btn btn-danger btn-sm4 rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="fa fa-trash"></i></button></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">VS</th>
+                                <td>1040052001</td>
+                            <td>
+                                <div class="custom-control custom-checkbox">
+                                    <input id="save-card1" name="savecard1" class="custom-control-input" type="checkbox">
+                                    <label class="custom-control-label" for="save-card1"></label>
+                                </div>
+                                </td>
+                                <td><button class="btn btn-primary btn-sm4 rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Enable"><i class="fa fa-table"></i></button></td>
+                                <td><button class="btn btn-danger btn-sm4 rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="fa fa-trash"></i></button></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">UK</th>
+                                <td>116752090</td>
+                                <td>
+                                <div class="custom-control custom-checkbox">
+                                    <input id="save-card1" name="savecard1" class="custom-control-input" type="checkbox">
+                                    <label class="custom-control-label" for="save-card1"></label>
+                                </div>
+                                </td>
+                                <td><button class="btn btn-primary btn-sm4 rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Enable"><i class="fa fa-table"></i></button></td>
+                                <td><button class="btn btn-danger btn-sm4 rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="fa fa-trash"></i></button></td>
+                            </tr>
+                            <tr>
+                                <th colspan="5" scope="row"><button type="button" class="btn btn-primary">Add MemberShio</button></th>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                      </div>
+                    <!-- 10th end --> 
+                    
+                    
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Banner
+        ============================================= -->
+        <div class="col-lg-2 mt-4 mt-lg-0">
+          <div class="row">
+            <div class="col-6 col-lg-12 text-center"> <a href="#"><img src="assets/images/small-banner-5.jpg" alt="" title="" class="img-fluid rounded shadow-md"></a> </div>
+            <div class="col-6 col-lg-12 mt-lg-3 text-center"> <a href=""><img src="assets/images/small-banner-6.jpg" alt="" title="" class="img-fluid rounded shadow-md"></a> </div>
+          </div>
+        </div>
+        <!-- Banner end --> 
+        
+      </div>
+    </section>
+  </div>

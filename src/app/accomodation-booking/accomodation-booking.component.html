@@ -1,0 +1,543 @@
+<div class="hero-wrap py-4 py-md-5">
+    <div class="hero-mask opacity-7 bg-secondary"></div>
+    <div class="hero-bg" style="background-image:url('assets/images/accomodation.jpg');"></div>
+    <div class="hero-content py-0 py-lg-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7">
+          <ul class="nav nav-tabs style-2" id="myTab" role="tablist">
+                  <li class="nav-item"> <a class="nav-link active opacity-8" id="Domestic-tab" data-toggle="tab" href="#Domestic" role="tab" aria-controls="Domestic" aria-selected="true">Domestic Air Policy</a> </li>
+                  <li class="nav-item"> <a class="nav-link" id="International-tab" data-toggle="tab" href="#International" role="tab" aria-controls="International" aria-selected="true">International Air Policy</a> </li>
+              </ul>
+            <div class="position-relative px-4 pt-3 pb-4">
+              <div class="hero-mask opacity-8 bg-dark rounded-bottom"></div>
+              <div class="hero-content">
+                <!-- Tabs -->
+                
+                <div class="tab-content" id="myTabContent">
+                  <!-- Search Domestic -->
+                  <div class="tab-pane fade show active" id="Domestic" role="tabpanel" aria-labelledby="Domestic-tab">
+                      <form id="Domestic" class="search-input-line" method="post">
+                      <div class="row">
+                          <div class="col-lg-12 form-group">
+                              <div class="text-light">
+                                    <div class="custom-control-inline"> Does the corporate have a preferred hotel chain(s)?</div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                      <input id="oneway" name="flight-trip" class="custom-control-input" checked="" required type="radio">
+                                      <label class="custom-control-label" for="oneway">Yes </label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                      <input id="roundtrip" name="flight-trip" class="custom-control-input" required type="radio">
+                                      <label class="custom-control-label" for="roundtrip">No</label>
+                                    </div>
+                              </div>
+                          </div>
+                                                  
+                          <div class="col-lg-12 form-group">
+                              <select name="basic[]" multiple="multiple" class="3col active form-control">
+                                  <option value="AL">Alabama</option>
+                                  <option value="AK">Alaska</option>
+                                  <option value="AZ">Arizona</option>
+                                  <option value="AR">Arkansas</option>
+                                  <option value="CA">California</option>
+                                  <option value="CO">Colorado</option>
+                                  <option value="CT">Connecticut</option>
+                                  <option value="DE">Delaware</option>
+                                  <option value="FL">Florida</option>
+                                  <option value="GA">Georgia</option>
+                                  <option value="HI">Hawaii</option>
+                                  <option value="ID">Idaho</option>
+                                  <option value="IL">Illinois</option>
+                                  <option value="IN">Indiana</option>
+                                  <option value="IA">Iowa</option>
+                                  <option value="KS">Kansas</option>
+                                  <option value="KY">Kentucky</option>
+                                  <option value="LA">Louisiana</option>
+                                  <option value="ME">Maine</option>
+                                  <option value="MD">Maryland</option>
+                                  <option value="MA">Massachusetts</option>
+                                  <option value="MI">Michigan</option>
+                                  <option value="MN">Minnesota</option>
+                                  <option value="MS">Mississippi</option>
+                                  <option value="MO">Missouri</option>
+                                  <option value="MT">Montana</option>
+                                  <option value="NE">Nebraska</option>
+                                  <option value="NV">Nevada</option>
+                                  <option value="NH">New Hampshire</option>
+                                  <option value="NJ">New Jersey</option>
+                                  <option value="NM">New Mexico</option>
+                                  <option value="NY">New York</option>
+                                  <option value="NC">North Carolina</option>
+                                  <option value="ND">North Dakota</option>
+                                  <option value="OH">Ohio</option>
+                                  <option value="OK">Oklahoma</option>
+                                  <option value="OR">Oregon</option>
+                                  <option value="PA">Pennsylvania</option>
+                                  <option value="RI">Rhode Island</option>
+                                  <option value="SC">South Carolina</option>
+                                  <option value="SD">South Dakota</option>
+                                  <option value="TN">Tennessee</option>
+                                  <option value="TX">Texas</option>
+                                  <option value="UT">Utah</option>
+                                  <option value="VT">Vermont</option>
+                                  <option value="VA">Virginia</option>
+                                  <option value="WA">Washington</option>
+                                  <option value="WV">West Virginia</option>
+                                  <option value="WI">Wisconsin</option>
+                                  <option value="WY">Wyoming</option>
+                              </select>
+                          </div>
+                          
+                          <div class="col-lg-12 form-group">
+                              <div class="form-check custom-control custom-checkbox">
+                                  <input id="remember-me" name="remember" class="custom-control-input" type="checkbox">
+                                  <label class="custom-control-label" for="remember-me">Remember Me</label>
+                              </div>
+                          </div>
+                          
+                          
+                          <div class="col-lg-12 form-group">
+                                <select class="custom-select" id="operator" required="">
+                                  <option value="">Hotels have to be booked_____days prior to travel</option>
+                                  <option>1</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                </select>
+                          </div>
+                          
+                          <div class="col-lg-12 form-group">
+                              <div class="text-light">
+                                  <div class="custom-control-inline">If, booking is for less than______ days, allow travel?</div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                      <input id="stopovers" name="flight-trip" class="custom-control-input" checked="" required type="radio">
+                                      <label class="custom-control-label" for="stopovers">Yes </label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                      <input id="stopoversno" name="flight-trip" class="custom-control-input" required type="radio">
+                                      <label class="custom-control-label" for="stopoversno">No</label>
+                                    </div>
+                              </div>
+                          </div>
+                          
+                          
+                          <div class="col-lg-12 form-group">
+                              <div class="text-light">
+                                  <div class="custom-control-inline">Create approval process</div>
+                                      <div class="custom-control custom-radio custom-control-inline">
+                                          <input id="people" name="flight-trip" class="custom-control-input" checked="" required type="radio">
+                                          <label class="custom-control-label" for="people">Yes </label>
+                                      </div>
+                                  <div class="custom-control custom-radio custom-control-inline">
+                                      <input id="peoplenone" name="flight-trip" class="custom-control-input" required type="radio">
+                                      <label class="custom-control-label" for="peoplenone">No</label>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-lg-12 form-group">
+                              <h6 class="mb-2">For tickets booked in advance</h6>
+                                <select class="custom-select" id="operator" required="">
+                                  <option value="">Outline approval process:</option>
+                                  <option>How many approvers - 1,2?</option>
+                                  <option>Is there a buffer amount?"</option>
+                                </select>
+                          </div>
+                          
+                          <div class="col-lg-12 form-group">
+                              <h6 class="mb-2">For hotels booked on short notice (only if row 26 is marked yes)</h6>
+                              <select class="custom-select" id="operator" required="">
+                                  <option value="">Outline approval process:</option>
+                                  <option>How many approvers - 1,2?</option>
+                                  <option>Is there a buffer amount?</option>
+                              </select> 
+                          </div>
+                          
+                          <div class="col-lg-12 form-group">
+                              <div class="custom-control-inline">Will traveller eligbility be based on hotel star rating</div>
+                              <div class="custom-control custom-radio custom-control-inline">
+                                  <input id="allow-travel" name="flight-trip" class="custom-control-input" checked="" required type="radio">
+                                  <label class="custom-control-label" for="allow-travel">Yes </label>
+                              </div>
+                              <div class="custom-control custom-radio custom-control-inline">
+                                  <input id="allow-travelnone" name="flight-trip" class="custom-control-input" required type="radio">
+                                  <label class="custom-control-label" for="allow-travelnone">No</label>
+                              </div>
+                          </div>
+                          
+                          <div class="col-lg-12 form-group">
+                              <select class="custom-select" id="operator" required="">
+                                      <option value="">If yes, star rating division</option>
+                                      <option>Select 1</option>
+                                      <option>Select 2</option>
+                              </select> 
+                          </div>
+                          
+                          <div class="col-lg-12 form-group">
+                          <h6 class="mb-2">Define maximum price of room (inc taxesl)</h6>
+                              <select class="custom-select" id="operator" required="">
+                                      <option value="">Choose location (domestic)</option>
+                                      <option>Location 1</option>
+                                      <option>Location 2</option>
+                              </select> 
+                          </div>
+                          
+                          <div class="col-lg-12 form-group">
+                              <select class="custom-select" id="operator" required="">
+                                      <option value="">Choose location (international)</option>
+                                      <option>location 1</option>
+                                      <option>location 2</option>
+                              </select> 
+                          </div> 
+                          
+                          <button class="btn btn-primary btn-block mt-4" type="submit">Update</button>
+                          
+                      </div>
+                      </form>
+                  </div>
+                  <!-- Search International -->
+                  <div class="tab-pane fade" id="International" role="tabpanel" aria-labelledby="International-tab">
+                      <form id="International" class="search-input-line" method="post">
+                          <div class="row">
+                              <div class="col-lg-12 form-group">
+                                  <div class="text-light">
+                                        <div class="custom-control-inline"> Does the corporate have a preferred hotel chain(s)?</div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                          <input id="oneway" name="flight-trip" class="custom-control-input" checked="" required type="radio">
+                                          <label class="custom-control-label" for="oneway">Yes </label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                          <input id="roundtrip" name="flight-trip" class="custom-control-input" required type="radio">
+                                          <label class="custom-control-label" for="roundtrip">No</label>
+                                        </div>
+                                  </div>
+                              </div>
+                                                      
+                              <div class="col-lg-12 form-group">
+                                  <select name="basic[]" multiple="multiple" class="3col active form-control">
+                                      <option value="AL">Alabama</option>
+                                      <option value="AK">Alaska</option>
+                                      <option value="AZ">Arizona</option>
+                                      <option value="AR">Arkansas</option>
+                                      <option value="CA">California</option>
+                                      <option value="CO">Colorado</option>
+                                      <option value="CT">Connecticut</option>
+                                      <option value="DE">Delaware</option>
+                                      <option value="FL">Florida</option>
+                                      <option value="GA">Georgia</option>
+                                      <option value="HI">Hawaii</option>
+                                      <option value="ID">Idaho</option>
+                                      <option value="IL">Illinois</option>
+                                      <option value="IN">Indiana</option>
+                                      <option value="IA">Iowa</option>
+                                      <option value="KS">Kansas</option>
+                                      <option value="KY">Kentucky</option>
+                                      <option value="LA">Louisiana</option>
+                                      <option value="ME">Maine</option>
+                                      <option value="MD">Maryland</option>
+                                      <option value="MA">Massachusetts</option>
+                                      <option value="MI">Michigan</option>
+                                      <option value="MN">Minnesota</option>
+                                      <option value="MS">Mississippi</option>
+                                      <option value="MO">Missouri</option>
+                                      <option value="MT">Montana</option>
+                                      <option value="NE">Nebraska</option>
+                                      <option value="NV">Nevada</option>
+                                      <option value="NH">New Hampshire</option>
+                                      <option value="NJ">New Jersey</option>
+                                      <option value="NM">New Mexico</option>
+                                      <option value="NY">New York</option>
+                                      <option value="NC">North Carolina</option>
+                                      <option value="ND">North Dakota</option>
+                                      <option value="OH">Ohio</option>
+                                      <option value="OK">Oklahoma</option>
+                                      <option value="OR">Oregon</option>
+                                      <option value="PA">Pennsylvania</option>
+                                      <option value="RI">Rhode Island</option>
+                                      <option value="SC">South Carolina</option>
+                                      <option value="SD">South Dakota</option>
+                                      <option value="TN">Tennessee</option>
+                                      <option value="TX">Texas</option>
+                                      <option value="UT">Utah</option>
+                                      <option value="VT">Vermont</option>
+                                      <option value="VA">Virginia</option>
+                                      <option value="WA">Washington</option>
+                                      <option value="WV">West Virginia</option>
+                                      <option value="WI">Wisconsin</option>
+                                      <option value="WY">Wyoming</option>
+                                  </select>
+                              </div>
+                              
+                              <div class="col-lg-12 form-group">
+                                  <div class="form-check custom-control custom-checkbox">
+                                      <input id="remember-me" name="remember" class="custom-control-input" type="checkbox">
+                                      <label class="custom-control-label" for="remember-me">Remember Me</label>
+                                  </div>
+                              </div>
+                              
+                              
+                              <div class="col-lg-12 form-group">
+                                    <select class="custom-select" id="operator" required="">
+                                      <option value="">Hotels have to be booked_____days prior to travel</option>
+                                      <option>1</option>
+                                      <option>2</option>
+                                      <option>3</option>
+                                    </select>
+                              </div>
+                              
+                              <div class="col-lg-12 form-group">
+                                  <div class="text-light">
+                                      <div class="custom-control-inline">If, booking is for less than______ days, allow travel?</div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                          <input id="stopovers" name="flight-trip" class="custom-control-input" checked="" required type="radio">
+                                          <label class="custom-control-label" for="stopovers">Yes </label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                          <input id="stopoversno" name="flight-trip" class="custom-control-input" required type="radio">
+                                          <label class="custom-control-label" for="stopoversno">No</label>
+                                        </div>
+                                  </div>
+                              </div>
+                              
+                              
+                              <div class="col-lg-12 form-group">
+                                  <div class="text-light">
+                                      <div class="custom-control-inline">Create approval process</div>
+                                          <div class="custom-control custom-radio custom-control-inline">
+                                              <input id="people" name="flight-trip" class="custom-control-input" checked="" required type="radio">
+                                              <label class="custom-control-label" for="people">Yes </label>
+                                          </div>
+                                      <div class="custom-control custom-radio custom-control-inline">
+                                          <input id="peoplenone" name="flight-trip" class="custom-control-input" required type="radio">
+                                          <label class="custom-control-label" for="peoplenone">No</label>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-lg-12 form-group">
+                                  <h6 class="mb-2">For tickets booked in advance</h6>
+                                    <select class="custom-select" id="operator" required="">
+                                      <option value="">Outline approval process:</option>
+                                      <option>How many approvers - 1,2?</option>
+                                      <option>Is there a buffer amount?"</option>
+                                    </select>
+                              </div>
+                              
+                              <div class="col-lg-12 form-group">
+                                  <h6 class="mb-2">For hotels booked on short notice (only if row 26 is marked yes)</h6>
+                                  <select class="custom-select" id="operator" required="">
+                                      <option value="">Outline approval process:</option>
+                                      <option>How many approvers - 1,2?</option>
+                                      <option>Is there a buffer amount?</option>
+                                  </select> 
+                              </div>
+                              
+                              <div class="col-lg-12 form-group">
+                                  <div class="custom-control-inline">Will traveller eligbility be based on hotel star rating</div>
+                                  <div class="custom-control custom-radio custom-control-inline">
+                                      <input id="allow-travel" name="flight-trip" class="custom-control-input" checked="" required type="radio">
+                                      <label class="custom-control-label" for="allow-travel">Yes </label>
+                                  </div>
+                                  <div class="custom-control custom-radio custom-control-inline">
+                                      <input id="allow-travelnone" name="flight-trip" class="custom-control-input" required type="radio">
+                                      <label class="custom-control-label" for="allow-travelnone">No</label>
+                                  </div>
+                              </div>
+                              
+                              <div class="col-lg-12 form-group">
+                                  <select class="custom-select" id="operator" required="">
+                                          <option value="">If yes, star rating division</option>
+                                          <option>Select 1</option>
+                                          <option>Select 2</option>
+                                  </select> 
+                              </div>
+                              
+                              <div class="col-lg-12 form-group">
+                              <h6 class="mb-2">Define maximum price of room (inc taxesl)</h6>
+                                  <select class="custom-select" id="operator" required="">
+                                          <option value="">Choose location (domestic)</option>
+                                          <option>Location 1</option>
+                                          <option>Location 2</option>
+                                  </select> 
+                              </div>
+                              
+                              <div class="col-lg-12 form-group">
+                                  <select class="custom-select" id="operator" required="">
+                                          <option value="">Choose location (international)</option>
+                                          <option>location 1</option>
+                                          <option>location 2</option>
+                                  </select> 
+                              </div> 
+                              <button class="btn btn-primary btn-block mt-4" type="submit">Update</button>
+                          </div>
+                      </form>
+                  </div>
+                   
+                  
+                  
+                  <!-- Search Train -->
+                  <div class="tab-pane fade" id="trains" role="tabpanel" aria-labelledby="trains-tab">
+                    <form id="bookingTrain" class="search-input-line" method="post">
+                      <div class="row">
+                        <div class="col-12 form-group">
+                          <input type="text" class="form-control" id="trainFrom" required placeholder="From">
+                          <span class="icon-inside"><i class="fas fa-map-marker-alt"></i></span> </div>
+                        <div class="col-12 form-group">
+                          <input type="text" class="form-control" id="trainTo" required placeholder="To">
+                          <span class="icon-inside"><i class="fas fa-map-marker-alt"></i></span> </div>
+                        <div class="col-12 form-group">
+                          <input id="trainDepart" type="text" class="form-control" required placeholder="Depart Date">
+                          <span class="icon-inside"><i class="far fa-calendar-alt"></i></span> </div>
+                        <div class="col-12 travellers-class form-group">
+                          <input type="text" id="trainTravellersClass"  class="travellers-class-input form-control" name="train-travellers-class" placeholder="Travellers, Class" required onkeypress="return false;">
+                          <span class="icon-inside"><i class="fas fa-caret-down"></i></span>
+                          
+                          <!-- Travellers & Class Dropdown -->
+                          <div class="travellers-dropdown">
+                            <div class="row align-items-center">
+                              <div class="col-sm-7">
+                                <p class="mb-sm-0">Adults <small class="text-muted">(12+ yrs)</small></p>
+                              </div>
+                              <div class="col-sm-5">
+                                <div class="qty input-group">
+                                  <div class="input-group-prepend">
+                                    <button type="button" class="btn bg-light-4" data-value="decrease" data-target="#trainAdult-travellers" data-toggle="spinner">-</button>
+                                  </div>
+                                  <input type="text" data-ride="spinner" id="trainAdult-travellers" class="qty-spinner form-control" value="1" readonly>
+                                  <div class="input-group-append">
+                                    <button type="button" class="btn bg-light-4" data-value="increase" data-target="#trainAdult-travellers" data-toggle="spinner">+</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <hr class="my-2">
+                            <div class="row align-items-center">
+                              <div class="col-sm-7">
+                                <p class="mb-sm-0">Children <small class="text-muted">(2-12 yrs)</small></p>
+                              </div>
+                              <div class="col-sm-5">
+                                <div class="qty input-group">
+                                  <div class="input-group-prepend">
+                                    <button type="button" class="btn bg-light-4" data-value="decrease" data-target="#trainChildren-travellers" data-toggle="spinner">-</button>
+                                  </div>
+                                  <input type="text" data-ride="spinner" id="trainChildren-travellers" class="qty-spinner form-control" value="0" readonly>
+                                  <div class="input-group-append">
+                                    <button type="button" class="btn bg-light-4" data-value="increase" data-target="#trainChildren-travellers" data-toggle="spinner">+</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <hr class="my-2">
+                            <div class="row align-items-center">
+                              <div class="col-sm-7">
+                                <p class="mb-sm-0">Infants <small class="text-muted">(Below 2 yrs)</small></p>
+                              </div>
+                              <div class="col-sm-5">
+                                <div class="qty input-group">
+                                  <div class="input-group-prepend">
+                                    <button type="button" class="btn bg-light-4" data-value="decrease" data-target="#trainInfants-travellers" data-toggle="spinner">-</button>
+                                  </div>
+                                  <input type="text" data-ride="spinner" id="trainInfants-travellers" class="qty-spinner form-control" value="0" readonly>
+                                  <div class="input-group-append">
+                                    <button type="button" class="btn bg-light-4" data-value="increase" data-target="#trainInfants-travellers" data-toggle="spinner">+</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group mt-3">
+                              <select id="train-class" name="train-class" class="custom-select">
+                                <option value="0">All Class</option>
+                                <option value="1">First Class</option>
+                                <option value="2">Second Class</option>
+                                <option value="3">First Class Sleeper (SL)</option>
+                                <option value="4">Second Class Sleeper (SL)</option>
+                                <option value="5">Business</option>
+                              </select>
+                            </div>
+                            <button class="btn btn-primary btn-block submit-done" type="button">Done</button>
+                          </div>
+                        </div>
+                      </div>
+                      <button class="btn btn-primary btn-block mt-2" type="submit">Search Trains</button>
+                    </form>
+                  </div>
+                  <!-- Search Bus -->
+                  <div class="tab-pane fade" id="bus" role="tabpanel" aria-labelledby="bus-tab">
+                    <form id="bookingBus" class="search-input-line" method="post">
+                      <div class="row">
+                        <div class="col-12 form-group">
+                          <input type="text" class="form-control" id="busFrom" required placeholder="From">
+                          <span class="icon-inside"><i class="fas fa-map-marker-alt"></i></span> </div>
+                        <div class="col-12 form-group">
+                          <input type="text" class="form-control" id="busTo" required placeholder="To">
+                          <span class="icon-inside"><i class="fas fa-map-marker-alt"></i></span> </div>
+                        <div class="col-12 form-group">
+                          <input id="busDepart" type="text" class="form-control" required placeholder="Depart Date">
+                          <span class="icon-inside"><i class="far fa-calendar-alt"></i></span> </div>
+                        <div class="col-12 travellers-class form-group">
+                          <input type="text" id="busTravellersClass"  class="travellers-class-input form-control" name="bus-travellers-class" placeholder="Seats" required onkeypress="return false;">
+                          <span class="icon-inside"><i class="fas fa-caret-down"></i></span>
+                          
+                          <!-- Travellers & Class Dropdown -->
+                          <div class="travellers-dropdown">
+                            <div class="row align-items-center mb-3">
+                              <div class="col-sm-7">
+                                <p class="mb-sm-0">Seats</p>
+                              </div>
+                              <div class="col-sm-5">
+                                <div class="qty input-group">
+                                  <div class="input-group-prepend">
+                                    <button type="button" class="btn bg-light-4" data-value="decrease" data-target="#adult-travellers" data-toggle="spinner">-</button>
+                                  </div>
+                                  <input type="text" data-ride="spinner" id="adult-travellers" class="qty-spinner form-control" value="1" readonly>
+                                  <div class="input-group-append">
+                                    <button type="button" class="btn bg-light-4" data-value="increase" data-target="#adult-travellers" data-toggle="spinner">+</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <button class="btn btn-primary btn-block submit-done" type="button">Done</button>
+                          </div>
+                        </div>
+                      </div>
+                      <button class="btn btn-primary btn-block mt-2" type="submit">Search Bus</button>
+                    </form>
+                  </div>
+                </div><!-- Tabs End -->
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-lg-5 mt-5 mt-lg-0">
+            <h2 class="text-9 font-weight-600 text-light">Why Booking with Quickai ?</h2>
+            <p class="lead mb-4 text-light">Online Booking. Save Time and Money!</p>
+            <div class="row">
+              <div class="col-12">
+                <div class="featured-box1 style-3 mb-4">
+                  <div class="featured-box-icon border rounded-circle text-light"> <i class="fas fa-dollar-sign"></i></div>
+                  <h3 class="text-light">Cheapest Price</h3>
+                  <p class="text-light opacity-8">Always get cheapest price with the best in the industry. So you get the best deal every time.</p>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="featured-box1 style-3 mb-4">
+                  <div class="featured-box-icon border rounded-circle text-light"> <i class="fas fa-times"></i></div>
+                  <h3 class="text-light">Easy Cancellation &amp; Refunds</h3>
+                  <p class="text-light opacity-8">Get instant refund and get any booking fees waived off! Easy cancellation process is available.</p>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="featured-box1 style-3 mb-4">
+                  <div class="featured-box-icon border rounded-circle text-light"> <i class="fas fa-percentage"></i></div>
+                  <h3 class="text-light">No Booking Charges</h3>
+                  <p class="text-light opacity-8">No hidden charges, no payment fees, and free customer service. So you get the best deal every time!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+<app-newfooter></app-newfooter>

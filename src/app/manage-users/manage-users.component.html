@@ -1,0 +1,289 @@
+  	   <section class="page-header page-header-text-light bg-secondary py-4" style="background: url('assets/images/bg.png') center center;">
+        <div class="container">
+          <div class="row text-center">
+			<div class="col-2" style="text-align: left;margin-left: -1.5%">
+				<ul class="breadcrumb mb-0">
+				  <li>{{resource_name}}</li>  
+				</ul>
+			  </div>
+			<div class="col-10">
+			  <ul class="breadcrumb mb-0">
+				<li><a href="index.html">Home</a>/ </li>  
+				<li class="active">Manage Users</li>
+			  </ul>
+			</div>
+          
+          </div>
+        </div>
+      </section>
+      <!-- Page Header end -->
+      <div class="container">
+		<div class="bg-light shadow-md rounded">
+			<div class="row">
+				<div class="col-lg-8">
+          <div class="border-right p-4">
+            <h2 class="text-6"> Search Users </h2>
+            <p>Please fill out the form below and we promise you to get back to you within a couple of hours.</p>
+            <form [formGroup]="formVar" (ngSubmit)="searchUser()">
+			<div id="bookingBus" method="post">
+                <div class="form-row">
+                  <div class="col-6 col-sm-3 form-group">
+                  <select class="custom-select" id="title"  
+				  formControlName="status">
+                    <option value="">Status</option>
+					<option value="1">Active</option>
+					<option value="0">Inactive</option>
+                  </select>
+                </div>
+					
+                  <div class="col-6 col-lg-3 form-group">
+                    <select class="custom-select" id="title" 
+					formControlName="user_type">
+                    <option value="">User Type</option>
+					<option>Any</option>
+                    <option>Staff</option>
+                    <option>Corporate</option>
+					</select>
+                  </div>
+				  
+					<div class="col-6 col-lg-3 form-group">
+						<ngx-datepicker [(ngModel)]="date" [options]="options" formControlName="date"></ngx-datepicker>
+						<span class="icon-inside"><i class="far fa-calendar-alt"></i></span>
+					</div>
+					
+					<div class="col-6 col-lg-3 form-group">
+						<ngx-datepicker id="todate" [(ngModel)]="date2" formControlName="date2" [options]="options2" ></ngx-datepicker>
+						<span class="icon-inside"><i class="far fa-calendar-alt"></i></span>
+					</div>
+					
+					
+					<div class="col-6 col-lg-4 form-group">
+						<input type="text" class="form-control" placeholder="Sales Incharge">
+						<!-- formControlName="approver1"> -->
+						<span class="icon-inside"><i class="far fa-user"></i></span>
+					</div>
+					
+					<div class="col-6 col-lg-4 form-group">
+						<input type="text" class="form-control" placeholder="ID" >
+						<!-- formControlName="userid"> -->
+						<span class="icon-inside"><i class="fa fa-address-card"></i></span>
+					</div>
+					
+					<div class="col-6 col-lg-4 form-group">
+						<input type="text" class="form-control" placeholder="Name"
+						formControlName="fname">
+						<span class="icon-inside"><i class="fas fa-user"></i></span>
+					</div>
+					
+					<div class="col-6 col-lg-6 form-group">
+						<input type="text" class="form-control" placeholder="Email" 
+						formControlName="email_id">
+						<span class="icon-inside"><i class="fas fa-envelope-open"></i></span>
+					</div>
+					
+					
+					<div class="col-lg-6 form-group">
+						<input type="text" class="form-control" placeholder="Mobile"
+						formControlName="phone_number">
+						<span class="icon-inside"><i class="fas fa-mobile-alt"></i></span>
+					</div>
+					
+					<div class="col-6 col-lg-6 form-group">
+                <!-- <button class="btn btn-primary btn-block" type="submit" click="searchUser()">SEARCH USER</button> -->
+                <button class="btn btn-primary btn-block" type="submit">SEARCH USER</button>
+
+			</div>
+				
+				<div class="col-6 col-lg-6 form-group">
+                <a href="#" class="btn btn-primary btn-block" data-toggle="modal" data-target="#adduser">ADD USER</a>
+				</div>
+				
+                </div>
+				
+              </div>
+			</form>
+          </div>
+        </div>
+				
+				<div class="col-lg-4">
+				<div class="pr-4 pt-3">
+				  <img src="assets/images/user.png" class="img-fluid">
+				  </div>
+				</div>
+			</div>
+			
+			<div class="bg-light shadow-md rounded p-4 border-top">
+				<div class="table-responsive">
+					<div class="manage-header">
+						<ul>
+							<li>ID</li>
+							<li>Company / Branch</li>
+							<li>Type</li>
+							<li>Name</li>
+							<li>User Status</li>
+							<li>User Credit</li>
+							<li>Updates</li>
+						</ul>
+					</div>
+					<div *ngFor="let x of users;let i=index;">
+						<div class="manage" >
+								<ul>
+									<li> <a data-toggle="collapse" href="#collapseExample{{i}}" role="button" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-plus" style="margin-right: 10px;"></i>{{x.userid}}</a></li>
+									<li>{{x.company_branchid}}</li>
+									<li>{{x.user_type}}</li>
+									<li>{{x.fname}}</li>
+									<li *ngIf="x.status">
+										<button class="btn btn-secondary btn-sm btn-sm2" type="submit" *ngIf="x.status && x.status==='1'">Active</button>
+										<button class="btn btn-danger btn-sm btn-sm2" type="submit" *ngIf="x.status && x.status==='0'">Inactive</button>
+										<button class="btn btn-secondary btn-sm btn-sm2" type="submit" *ngIf="!x.status">-</button>
+									</li>
+									<li *ngIf="!x.status">-</li>
+									<li>{{x.user_credit}}</li>
+									<li class="btn-hover">
+										<div class="dropdown">
+										  <button class="btn btn-info dropdown-toggle btn-sm2" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											Dropdown
+										  </button>
+										  <div class="dropdown-menu emulate" aria-labelledby="dropdownMenu2">
+											<ul>
+											<li><a href="#">Config</a></li>
+											<li><a href="#">Profile</a></li>
+											<li><a href="#">Emulate User</a></li>
+											<li><a href="#">Commercials</a></li>
+											<li><a href="#">Markup</a></li>
+											<li><a href="#">Update Payment</a></li>
+											<li><a href="#">Reset Password</a></li>
+											<li><a href="#">Hotel Config</a></li>
+											<li><a href="#">Disabled</a></li>
+											<li><a href="#">Deactivate</a></li>
+											</ul>
+										  </div>
+										</div>						
+									</li>
+									
+								</ul>
+						</div>
+						<div class="collapse" id="collapseExample{{i}}">
+							<div class="row-ifo-details-more">
+								<div class="psngr-dt-feild-input">
+									<ul class="det-inf-value">                                                                        
+										<li><strong>Email : </strong> <span>{{x.email_id}}</span></li>                                                                        
+										<li><strong>Mobile : </strong> <span>{{x.phone_number}}</span></li>                                                                        
+										<li><strong>Last Transaction : </strong> <span *ngIf="x.last_transac_date">{{x.last_transac_date  | date: 'dd-MM-yyyy'}}</span> <span *ngIf="!x.last_transac_date"> </span></li>                                                                        
+										<li><strong>Last Login</strong> <span *ngIf="x.last_login_date">{{x.last_login_date| date: 'dd-MM-yyyy'}}</span> <span *ngIf="!x.last_login_date">  </span></li>                                                                       
+										<li><strong>Sales Incharge : </strong> <span></span></li>                                                                      
+										<li><strong>Activation Date :</strong> <span *ngIf="x.activation_date">{{x.activation_date| date: 'dd-MM-yyyy'}}</span> <span *ngIf="!x.activation_date">  </span></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						</div>
+					<!-- <div class="collapse" id="collapseExample">
+						<div class="row-ifo-details-more">
+							<div class="psngr-dt-feild-input">
+								<ul class="det-inf-value">                                                                        
+									<li><strong>Email : </strong> <span>operations@digitravelsolutions.com</span></li>                                                                        
+									<li><strong>Mobile : </strong> <span>9818277749</span></li>                                                                        
+									<li><strong>Last Transaction : </strong> <span>01 Jan 1900</span></li>                                                                        
+									<li><strong>Last Login</strong> <span>03 Jul 2021</span></li>                                                                       
+									<li><strong>Sales Incharge : </strong> <span></span></li>                                                                      
+									<li><strong>Activation Date :</strong> <span>01 Jan 1900</span></li>
+								</ul>
+							</div>
+						</div>
+					</div> -->
+				</div>
+			</div>
+		</div>
+	</div>
+      
+
+	<!-- Modal Dialog - add user
+============================================= -->
+<div id="adduser" class="modal fade" role="dialog" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+	  <div class="modal-content p-sm-3">
+	  <div class="modal-header">
+	  <h5 class="modal-title ">Add Users</h5>
+	  
+	  <button type="button"  class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+	  </div>
+		<div class="modal-body">
+		  
+			
+			  <form  [formGroup]="addUserForm"  (ngSubmit)="addUser()">
+			  <div class="form-row">
+				<div class="col-sm-6 form-group" style="margin-bottom: 0%; padding-bottom: 0%;">
+					<select class="custom-select" 
+					name="partner" id="title"
+					formControlName="user_type">
+					 <option value="">Select User Type</option>
+					   <!-- <option>PartnerBranch</option> -->
+					  <option>Staff</option>
+					  <option>Corporate</option>
+					  <!-- <option>CorporateBranch</option>
+					  <option>Distributor</option>
+					  <option>Employee</option>
+					  <option>Agent</option>
+					  <option>Customer</option>
+					  <option>Supplier</option> -->
+					</select>
+				  </div>
+				  
+				  <div class="col-lg-6 form-group" style="margin-bottom: 0%; padding-bottom: 0%;">
+					  <input type="text" class="form-control" placeholder="Name" formControlName="fname">
+					  
+					  <span class="icon-inside"><i class="far fa-user"></i></span>
+				  </div>
+
+				  <div class="col-sm-6 form-group" style="margin-top: 0%; padding-top: 0%;">
+				
+					<div *ngIf="f['user_type'].touched && f['user_type'].invalid" class="alert alert-danger">
+						<div *ngIf="f['user_type'].errors && f['user_type'].errors['required']">User Type is required.</div>
+					</div>
+				  </div>
+				  
+				  <div class="col-lg-6 form-group" style="margin-top: 0%; padding-top: 0%;">
+					  <div *ngIf="f['fname'].touched && f['fname'].invalid" class="alert alert-danger">
+						<div *ngIf="f['fname'].errors && f['fname'].errors['required']">Name is required.</div>
+					</div>
+				  </div>
+				  
+				  <div class="col-lg-6 form-group" style="margin-bottom: 0%; padding-bottom: 0%;">
+					  <input type="text" class="form-control" placeholder="Phone Number" formControlName="phone_number">
+					  <span class="icon-inside"><i class="fas fa-mobile-alt"></i></span>
+				  </div>
+				  
+				  <div class="col-lg-6 form-group" style="margin-bottom: 0%; padding-bottom: 0%;">
+					  <input type="text" class="form-control" placeholder="Email Address" formControlName="email_id">
+					  <span class="icon-inside"><i class="fas fa-envelope-open"></i></span>
+				  </div>
+
+				  <div class="col-lg-6 form-group" style="margin-top: 0%; padding-top: 0%;">
+					<div *ngIf="f['phone_number'].touched && f['phone_number'].invalid" class="alert alert-danger">
+					  <div *ngIf="f['phone_number'].errors && f['phone_number'].errors['required']">Phone Number is required.</div> 			  
+					  <div *ngIf="f['phone_number'].errors && f['phone_number'].errors['minlength']">Phone Number should be 10 character.</div>
+					  <div *ngIf="f['phone_number'].errors && f['phone_number'].errors['maxlength']">Phone Number should only be 10 character.</div>
+				  </div>
+				</div>
+				
+				<div class="col-lg-6 form-group" style="margin-top: 0%; padding-top: 0%;">
+					<div *ngIf="f['email_id'].touched && f['email_id'].invalid" class="alert alert-danger">
+					  <div *ngIf="f['email_id'].errors && f['email_id'].errors['required']">Email is required.</div>
+					  <div *ngIf="f['email_id'].errors && f['email_id'].errors['email']">Please, enter valid email address.</div>
+				  </div>
+				</div>
+				  
+					<button class="btn btn-primary btn-block" type="submit">Add User</button>		  
+							   
+				  </div>	
+								
+			  </form>
+			
+		  
+		</div>
+	  </div>
+	</div>
+  </div>
+  <!-- Modal Dialog - add user end -->
+  

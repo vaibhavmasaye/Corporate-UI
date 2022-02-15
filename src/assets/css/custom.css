@@ -257,8 +257,8 @@ cursor: pointer; white-space: nowrap;}
 .amenities-list:nth-child(even) {background: #f9f9f9;}
 .amenities-list:nth-child(odd) {background: #FFF;}
 .btn-sm4{ padding:0px 4px; border-radius:4px !important;}
-#Domestic .custom-select, #International .custom-select, #Accomodation .custom-select{ color:#fff; font-size: 13px; !important;}
-#Domestic .custom-control-inline, #International .custom-control-inline, #Accomodation .custom-control-inline{color:#fff; font-size: 13px; !important;}
+#Domestic .custom-select, #International .custom-select, #Accomodation .custom-select{ color:#fff; font-size: 13px!important;}
+#Domestic .custom-control-inline, #International .custom-control-inline, #Accomodation .custom-control-inline{color:#fff; font-size: 13px!important;}
 #Domestic h6, #International h6, #Accomodation h6{font-size:14px;}
 #Domestic .custom-control-label, #International .custom-control-label, #Accomodation .custom-control-label{color:#fff;}
 
